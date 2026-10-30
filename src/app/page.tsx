@@ -13,6 +13,7 @@ import { ServicesSection } from "@/components/sections/services-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { Footer } from "@/components/layout/footer";
 import { MobileQuickBar } from "@/components/layout/mobile-quick-bar";
+import { CinematicPreloader } from "@/components/animations/cinematic-preloader";
 
 export default function Home() {
   const [selectedService, setSelectedService] = useState("");
@@ -24,6 +25,9 @@ export default function Home() {
   return (
     <SmoothScrollProvider>
       <div className="relative min-h-screen bg-[#060709] text-[#f4f4f6] overflow-x-hidden selection:bg-orange-500/25 selection:text-white">
+        {/* Cinematic Intro Preloader & Curtain Wipe */}
+        <CinematicPreloader />
+
         {/* Desktop Custom Cursor */}
         <CustomCursor />
 

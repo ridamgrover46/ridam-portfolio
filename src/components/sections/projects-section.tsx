@@ -534,21 +534,21 @@ export function ProjectsSection() {
                   }}
                 >
                   {/* Browser Glass Bar with traffic lights & simulated URL */}
-                  <div className="flex items-center justify-between border-b border-white/10 bg-[#0c0e16]/95 px-4 py-2.5 backdrop-blur-md">
-                    <div className="flex items-center gap-2">
-                      <span className="h-2.5 w-2.5 rounded-full bg-rose-500/90 shadow-sm shadow-rose-500/50" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-amber-500/90 shadow-sm shadow-amber-500/50" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/90 shadow-sm shadow-emerald-500/50" />
-                      <div className="ml-2 flex items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 font-mono text-[10px] text-zinc-300">
-                        <Lock className="h-2.5 w-2.5 text-orange-400" />
-                        <span className="truncate max-w-[180px] sm:max-w-[260px]">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-[#0c0e16]/95 px-3.5 py-2 backdrop-blur-md">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2 w-2 rounded-full bg-rose-500/90 shadow-sm shadow-rose-500/50" />
+                      <span className="h-2 w-2 rounded-full bg-amber-500/90 shadow-sm shadow-amber-500/50" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-500/90 shadow-sm shadow-emerald-500/50" />
+                      <div className="ml-1.5 flex items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2 py-0.5 font-mono text-[9.5px] text-zinc-300">
+                        <Lock className="h-2 w-2 text-orange-400" />
+                        <span className="truncate max-w-[140px] sm:max-w-[200px]">
                           {p.url}
                         </span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-orange-400 font-bold bg-orange-500/10 px-2.5 py-0.5 rounded-full border border-orange-500/20">
+                    <div className="flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1 font-mono text-[8.5px] uppercase tracking-wider text-orange-400 font-bold bg-orange-500/10 px-2 py-0.5 rounded-full border border-orange-500/20">
                         <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-pulse" />
                         LIVE 0{i + 1}
                       </span>
@@ -571,13 +571,13 @@ export function ProjectsSection() {
 
                     {/* Official App Store & Google Play Badges Floating Overlay for Mobile App Project */}
                     {p.storeBadges && (
-                      <div className="absolute top-3 right-3 flex flex-col gap-1.5 z-10">
-                        <div className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-white shadow-xl backdrop-blur-md">
-                          <Smartphone className="size-3 text-white" />
+                      <div className="absolute top-2.5 right-2.5 flex flex-col gap-1 z-10">
+                        <div className="inline-flex items-center gap-1.5 rounded-md border border-white/20 bg-black/80 px-2 py-0.5 text-[8.5px] font-bold text-white shadow-xl backdrop-blur-md">
+                          <Smartphone className="size-2.5 text-white" />
                           <span> App Store Verified</span>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-emerald-300 shadow-xl backdrop-blur-md">
-                          <ShieldCheck className="size-3 text-emerald-400" />
+                        <div className="inline-flex items-center gap-1.5 rounded-md border border-emerald-500/30 bg-black/80 px-2 py-0.5 text-[8.5px] font-bold text-emerald-300 shadow-xl backdrop-blur-md">
+                          <ShieldCheck className="size-2.5 text-emerald-400" />
                           <span>▶ Google Play Approved</span>
                         </div>
                       </div>
@@ -585,48 +585,48 @@ export function ProjectsSection() {
 
                     {/* Interactive Audio Waveform Simulation Overlay on RadioTangy Card */}
                     {p.isAudioDemo && (
-                      <div className="absolute bottom-3 inset-x-3 rounded-xl border border-orange-500/30 bg-[#090b12]/92 p-2.5 backdrop-blur-xl shadow-2xl flex items-center justify-between gap-3 z-10">
+                      <div className="absolute bottom-2 inset-x-2 rounded-lg border border-orange-500/30 bg-[#090b12]/92 p-2 backdrop-blur-xl shadow-2xl flex items-center justify-between gap-2.5 z-10">
                         {/* Play / Pause Toggle Button */}
                         <button
                           type="button"
                           onClick={toggleAudioDemo}
-                          className="flex items-center justify-center size-9 rounded-lg bg-orange-500 text-slate-950 hover:bg-orange-400 transition-transform active:scale-90 shadow-md shadow-orange-500/30 shrink-0 cursor-pointer"
+                          className="flex items-center justify-center size-7 rounded-md bg-orange-500 text-slate-950 hover:bg-orange-400 transition-transform active:scale-90 shadow-md shadow-orange-500/30 shrink-0 cursor-pointer"
                           aria-label={isPlayingAudio ? "Pause Audio Preview" : "Play Audio Preview"}
                         >
                           {isPlayingAudio ? (
-                            <Pause className="size-4 fill-current" />
+                            <Pause className="size-3.5 fill-current" />
                           ) : (
-                            <Play className="size-4 fill-current ml-0.5" />
+                            <Play className="size-3.5 fill-current ml-0.5" />
                           )}
                         </button>
 
                         {/* Animated Waveform Visualizer Bars */}
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between text-[10px] font-mono mb-1">
+                          <div className="flex items-center justify-between text-[9px] font-mono mb-0.5">
                             <span className="text-white font-bold truncate">
                               Ep 4: The Midnight Signal
                             </span>
-                            <span className="text-orange-400 font-bold shrink-0 ml-2">
+                            <span className="text-orange-400 font-bold shrink-0 ml-1.5">
                               {formatAudioTime(audioElapsed)} / 04:15
                             </span>
                           </div>
 
-                          <div className="flex items-center gap-1 h-5 overflow-hidden">
+                          <div className="flex items-center gap-0.5 h-3.5 overflow-hidden">
                             {[
-                              12, 24, 18, 30, 16, 28, 22, 14, 26, 32, 20, 15, 28, 22, 35, 18, 26,
-                              14, 30, 20, 16, 24, 18, 22,
+                              10, 20, 14, 26, 12, 22, 18, 12, 22, 28, 16, 12, 24, 18, 30, 14, 22,
+                              12, 26, 16, 12, 20, 14, 18,
                             ].map((h, barIdx) => (
                               <span
                                 key={barIdx}
-                                className={`w-1 rounded-full transition-all duration-300 ${
+                                className={`w-0.5 rounded-full transition-all duration-300 ${
                                   isPlayingAudio
                                     ? "bg-gradient-to-t from-orange-500 to-amber-300 animate-pulse"
                                     : "bg-white/20"
                                 }`}
                                 style={{
                                   height: isPlayingAudio
-                                    ? `${Math.max(6, (h * ((barIdx % 3) + 1)) % 22)}px`
-                                    : `${Math.max(4, h * 0.4)}px`,
+                                    ? `${Math.max(4, (h * ((barIdx % 3) + 1)) % 16)}px`
+                                    : `${Math.max(3, h * 0.35)}px`,
                                   animationDelay: `${barIdx * 45}ms`,
                                 }}
                               />
@@ -635,45 +635,50 @@ export function ProjectsSection() {
                         </div>
 
                         {/* Badge */}
-                        <div className="hidden sm:flex items-center gap-1 text-[9px] font-mono text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded shrink-0">
-                          <Volume2 className="size-3" />
-                          <span>320k Lossless</span>
+                        <div className="hidden sm:flex items-center gap-1 text-[8px] font-mono text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 px-1.5 py-0.5 rounded shrink-0">
+                          <Volume2 className="size-2.5" />
+                          <span>320k</span>
                         </div>
                       </div>
                     )}
                   </div>
 
                   {/* Dedicated Project Caption Bar */}
-                  <figcaption className="gallery-caption border-t border-white/10 bg-[#0b0d14]/95 px-5 py-4 backdrop-blur-xl">
-                    <div className="flex-1 min-w-0 pr-4">
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-[10px] font-bold tracking-widest text-orange-400 uppercase">
+                  <figcaption className="gallery-caption border-t border-white/10 bg-[#0b0d14]/95 px-4 py-3 backdrop-blur-xl">
+                    <div className="flex-1 min-w-0 pr-3">
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-mono text-[9px] font-bold tracking-widest text-orange-400 uppercase">
                           0{i + 1} / 0{GALLERY_PROJECTS.length}
                         </span>
                         <span className="text-white/20">•</span>
-                        <span className="font-mono text-[9px] font-semibold text-zinc-400 uppercase tracking-wider truncate">
+                        <span className="font-mono text-[8.5px] font-semibold text-zinc-400 uppercase tracking-wider truncate">
                           {p.category}
                         </span>
                       </div>
 
-                      <h3 className="mt-1 text-base sm:text-lg font-bold text-white tracking-tight truncate group-hover:text-orange-300 transition-colors font-sans">
+                      <h3 className="mt-0.5 text-sm sm:text-[15px] font-bold text-white tracking-tight truncate group-hover:text-orange-300 transition-colors font-sans">
                         {p.name}
                       </h3>
 
-                      <p className="mt-0.5 line-clamp-1 text-xs text-zinc-400 font-sans">
+                      <p className="mt-0.5 line-clamp-1 text-[11px] text-zinc-400 font-sans">
                         {p.subtitle}
                       </p>
 
                       {/* Tech Pills */}
-                      <div className="mt-2.5 flex flex-wrap gap-1.5">
-                        {p.tags.map((t) => (
+                      <div className="mt-2 flex flex-wrap gap-1">
+                        {p.tags.slice(0, 3).map((t) => (
                           <span
                             key={t}
-                            className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[9px] text-zinc-300"
+                            className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[8.5px] text-zinc-300"
                           >
                             {t}
                           </span>
                         ))}
+                        {p.tags.length > 3 && (
+                          <span className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[8.5px] text-zinc-400">
+                            +{p.tags.length - 3}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -686,7 +691,7 @@ export function ProjectsSection() {
                         setSelectedProject(p);
                       }}
                     >
-                      <ArrowUpRight className="h-5 w-5" />
+                      <ArrowUpRight className="h-4 w-4" />
                     </button>
                   </figcaption>
                 </figure>
@@ -908,25 +913,25 @@ export function ProjectsSection() {
         .gallery-stage {
           position: relative;
           display: grid;
-          gap: 40px;
-          width: calc(100% - 48px);
-          max-width: 680px;
-          margin: 40px auto 0;
+          gap: 28px;
+          width: calc(100% - 40px);
+          max-width: 420px;
+          margin: 32px auto 0;
           perspective: 1600px;
           z-index: 20;
         }
         .gallery-card {
           position: relative;
           margin: 0;
-          border-radius: 20px;
+          border-radius: 16px;
           overflow: hidden;
-          box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+          box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
           background: #0b0d14;
           transform-style: preserve-3d;
           transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
         }
         .gallery-card:hover {
-          box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 40px rgba(249, 115, 22, 0.16), 0 0 0 1px rgba(249, 115, 22, 0.4);
+          box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(249, 115, 22, 0.16), 0 0 0 1px rgba(249, 115, 22, 0.4);
         }
         .gallery-media {
           position: relative;
@@ -940,8 +945,8 @@ export function ProjectsSection() {
           align-items: center;
         }
         .gallery-btn {
-          width: 44px;
-          height: 44px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.15);
           background: rgba(255, 255, 255, 0.08);
@@ -979,17 +984,17 @@ export function ProjectsSection() {
             inset: 0;
             display: flex;
             align-items: center;
-            gap: 5vw;
+            gap: 3.5vw;
             width: max-content;
             margin: 0;
-            padding: 24vh 16vw 4vh;
+            padding: 24vh 22vw 6vh;
             perspective: 1600px;
             max-width: none;
           }
           .gallery-card {
             position: relative;
             flex: 0 0 auto;
-            width: min(52vw, 680px);
+            width: clamp(320px, 28vw, 430px);
           }
         }
       `}</style>

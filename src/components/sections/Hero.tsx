@@ -7,6 +7,7 @@ import { soundManager } from "@/lib/sound";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { HalftonePortrait } from "@/components/three/HalftonePortrait";
+import { GalaxyCanvas } from "@/components/animations/galaxy-canvas";
 
 export interface HeroProps {
   imageSrc?: string;
@@ -92,6 +93,9 @@ export function Hero({
       id="top"
       className="relative min-h-screen flex flex-col justify-between pt-20 sm:pt-24 pb-8 sm:pb-10 overflow-hidden bg-[#060709] select-none"
     >
+      {/* Interactive 3D Cosmic Galaxy Canvas (Mouse-reactive Nebula & Stars) */}
+      <GalaxyCanvas />
+
       {/* 4 Architectural Hairline Vertical Guides */}
       <div className="hero-grid" aria-hidden="true">
         <div className="w-px h-full bg-white/[0.035]" />
