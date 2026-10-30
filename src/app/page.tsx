@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/Hero";
 import { ProofStrip } from "@/components/sections/proof-strip";
 import { AboutSection } from "@/components/sections/about-section";
+import { ProcessFlow } from "@/components/sections/process-flow";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { SkillsSection } from "@/components/sections/skills-section";
 import { ServicesSection } from "@/components/sections/services-section";
@@ -39,6 +40,7 @@ export default function Home() {
           <Hero />
           <ProofStrip />
           <AboutSection />
+          <ProcessFlow />
           <ProjectsSection />
           <ServicesSection onSelectService={handleSelectService} />
           <SkillsSection />
