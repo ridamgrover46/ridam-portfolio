@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mobile-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090d" />
+      <stop offset="50%" stop-color="#0e1018" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+
+    <!-- Warm Amber Glow -->
+    <linearGradient id="amber-mobile" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+
+    <!-- Titanium Phone Rim -->
+    <linearGradient id="iphone-rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d3345" />
+      <stop offset="50%" stop-color="#181c28" />
+      <stop offset="100%" stop-color="#0d0f16" />
+    </linearGradient>
+
+    <filter id="phone-shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#f97316" flood-opacity="0.15" />
+    </filter>
+
+    <filter id="glow-badge" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="750" fill="url(#mobile-bg)" rx="16" />
+  <rect width="1198" height="748" x="1" y="1" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" rx="15" />
+
+  <!-- Top Status Bar -->
+  <rect x="0" y="0" width="1200" height="46" fill="#090b12" rx="16" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" opacity="0.85" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" opacity="0.85" />
+
+  <rect x="100" y="11" width="370" height="24" rx="6" fill="#141824" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+  <circle cx="116" cy="23" r="3" fill="#10b981" />
+  <text x="128" y="27" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">
+    zenith-mobile.app / releases / v3.4.0-production-build
+  </text>
+
+  <!-- Top Right Verified Store Badges -->
+  <g transform="translate(810, 10)">
+    <!-- Apple App Store Verified Badge -->
+    <rect x="0" y="0" width="180" height="26" rx="6" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+    <!-- Apple Icon (simplified vector) -->
+    <path d="M 16,14 C 16,10 18,8 20,8 C 21,8 22,9 23,9 C 24,9 25,8 26,8 C 28,8 30,10 30,13 C 30,17 27,21 25,21 C 24,21 23,20 22,20 C 21,20 20,21 19,21 C 17,21 16,17 16,14 Z" fill="#ffffff" />
+    <path d="M 23,6 C 24,5 25,4 25,3 C 24,3 23,4 22,5 C 22,6 23,6 23,6 Z" fill="#ffffff" />
+    <text x="36" y="17" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">App Store Verified</text>
+
+    <!-- Google Play Approved Badge -->
+    <g transform="translate(190, 0)">
+      <rect x="0" y="0" width="186" height="26" rx="6" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.35" stroke-width="1" />
+      <polygon points="16,8 24,13 16,18" fill="#10b981" />
+      <text x="32" y="17" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">Google Play Approved</text>
+    </g>
+  </g>
+
+  <!-- Background Ambient Lights -->
+  <circle cx="340" cy="380" r="160" fill="#f97316" fill-opacity="0.1" filter="url(#glow-badge)" />
+  <circle cx="860" cy="380" r="160" fill="#fbbf24" fill-opacity="0.08" filter="url(#glow-badge)" />
+
+  <!-- LEFT DEVICE: iPhone 16 Pro (Cross-Platform iOS Client) -->
+  <g transform="translate(100, 68)" filter="url(#phone-shadow)">
+    <!-- Outer Titanium Bezel -->
+    <rect width="320" height="630" rx="44" fill="url(#iphone-rim)" stroke="#525d75" stroke-width="2" />
+    <!-- Inner Screen Boundary -->
+    <rect x="8" y="8" width="304" height="614" rx="38" fill="#07080c" />
+
+    <!-- Dynamic Island Pill -->
+    <rect x="110" y="16" width="100" height="26" rx="13" fill="#000000" stroke="#1c202d" stroke-width="1" />
+    <circle cx="196" cy="29" r="4.5" fill="#131722" />
+    <circle cx="126" cy="29" r="4" fill="#10b981" /> <!-- FaceID indicator -->
+
+    <!-- Status Bar (iOS) -->
+    <text x="36" y="32" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">9:41</text>
+    <g transform="translate(254, 22)">
+      <!-- Battery icon -->
+      <rect width="20" height="10" rx="3" fill="none" stroke="#ffffff" stroke-width="1" />
+      <rect x="2" y="2" width="14" height="6" rx="1.5" fill="#10b981" />
+      <rect x="21" y="3" width="2" height="4" rx="1" fill="#ffffff" />
+    </g>
+
+    <!-- App Screen UI: Zenith Pro Feed -->
+    <g transform="translate(18, 54)">
+      <!-- App Header -->
+      <text x="8" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">Portfolio Pro</text>
+      <rect x="220" y="6" width="46" height="24" rx="12" fill="#f97316" fill-opacity="0.2" />
+      <text x="230" y="22" fill="#fdba74" font-family="monospace" font-size="10" font-weight="700">60 FPS</text>
+
+      <!-- Featured Feed Card 1 -->
+      <g transform="translate(0, 40)">
+        <rect width="270" height="140" rx="16" fill="#121622" stroke="#f97316" stroke-opacity="0.35" stroke-width="1" />
+        <rect x="14" y="14" width="70" height="70" rx="12" fill="url(#amber-mobile)" />
+        <circle cx="49" cy="49" r="16" fill="#0c0e16" />
+        <polygon points="46,43 55,49 46,55" fill="#f97316" />
+        <text x="96" y="32" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Audio Sync Stream</text>
+        <text x="96" y="50" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Lossless Spatial Audio</text>
+        <text x="96" y="70" fill="#10b981" font-family="monospace" font-size="10" font-weight="700">✓ Biometric Unlocked</text>
+
+        <!-- Mini Progress -->
+        <rect x="14" y="98" width="242" height="6" rx="3" fill="#1e2436" />
+        <rect x="14" y="98" width="160" height="6" rx="3" fill="url(#amber-mobile)" />
+        <text x="14" y="122" fill="#64748b" font-family="monospace" font-size="9.5">02:45 / 04:15</text>
+        <text x="200" y="122" fill="#fdba74" font-family="monospace" font-size="9.5" font-weight="700">HD AAC</text>
+      </g>
+
+      <!-- Feed Card 2: Dispatch Tracking -->
+      <g transform="translate(0, 194)">
+        <rect width="270" height="110" rx="16" fill="#121622" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+        <text x="14" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Dispatch Push Alert</text>
+        <rect x="194" y="14" width="62" height="18" rx="4" fill="#10b981" fill-opacity="0.2" />
+        <text x="202" y="27" fill="#6ee7b7" font-family="monospace" font-size="9" font-weight="700">DELIVERED</text>
+        <text x="14" y="52" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Load #LD-88921 signed &amp; confirmed.</text>
+        <text x="14" y="72" fill="#f97316" font-family="monospace" font-size="10">Escrow released: $4,850.00</text>
+        <text x="14" y="92" fill="#64748b" font-family="monospace" font-size="9.5">Apple Push Notification (APNs) • 1s ago</text>
+      </g>
+
+      <!-- Feed Card 3 -->
+      <g transform="translate(0, 318)">
+        <rect width="270" height="110" rx="16" fill="#121622" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+        <text x="14" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Offline SQLite Cache</text>
+        <text x="14" y="52" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Zero latency local query persistence.</text>
+        <rect x="14" y="70" width="130" height="22" rx="6" fill="#f97316" fill-opacity="0.2" />
+        <text x="24" y="85" fill="#fdba74" font-family="monospace" font-size="10" font-weight="700">SYNC ENGINE: OK</text>
+      </g>
+
+      <!-- Bottom Tab Bar -->
+      <g transform="translate(0, 480)">
+        <rect width="270" height="52" rx="18" fill="#0d1017" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+        <circle cx="45" cy="26" r="8" fill="#f97316" />
+        <circle cx="112" cy="26" r="6" fill="#475569" />
+        <circle cx="180" cy="26" r="6" fill="#475569" />
+        <circle cx="235" cy="26" r="6" fill="#475569" />
+      </g>
+
+      <!-- Home Indicator -->
+      <rect x="75" y="546" width="120" height="4" rx="2" fill="#ffffff" opacity="0.6" />
+    </g>
+  </g>
+
+  <!-- CENTER SUMMARY / BADGE CALLOUT -->
+  <g transform="translate(450, 90)">
+    <rect width="300" height="580" rx="20" fill="#0c0e17" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+    <text x="24" y="38" fill="#f97316" font-family="monospace" font-size="11" font-weight="800" letter-spacing="1.5">PRODUCTION ECOSYSTEM</text>
+    <text x="24" y="70" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800">
+      Dual Store Approval
+    </text>
+    <text x="24" y="96" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="400">
+      Cross-platform architecture tested and released on both major ecosystem stores.
+    </text>
+
+    <!-- App Store Official Compliance Card -->
+    <g transform="translate(20, 120)">
+      <rect width="260" height="90" rx="12" fill="#131724" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+      <circle cx="34" cy="34" r="14" fill="#ffffff" fill-opacity="0.1" />
+      <!-- Apple logo mark -->
+      <text x="27" y="39" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="700"></text>
+      <text x="58" y="30" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">Apple App Store</text>
+      <text x="58" y="46" fill="#10b981" font-family="monospace" font-size="10.5" font-weight="700">100% First-Pass Pass</text>
+      <text x="16" y="74" fill="#64748b" font-family="monospace" font-size="10">HIG Compliant • Privacy Manifest ✓</text>
+    </g>
+
+    <!-- Google Play Compliance Card -->
+    <g transform="translate(20, 224)">
+      <rect width="260" height="90" rx="12" fill="#131724" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+      <circle cx="34" cy="34" r="14" fill="#10b981" fill-opacity="0.15" />
+      <polygon points="30,28 40,34 30,40" fill="#10b981" />
+      <text x="58" y="30" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">Google Play Console</text>
+      <text x="58" y="46" fill="#6ee7b7" font-family="monospace" font-size="10.5" font-weight="700">Production Track Live</text>
+      <text x="16" y="74" fill="#64748b" font-family="monospace" font-size="10">Target API 34+ • 0 Rejections</text>
+    </g>
+
+    <!-- Key Technical Metrics List -->
+    <g transform="translate(20, 330)">
+      <rect width="260" height="224" rx="12" fill="#090b12" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+
+      <text x="16" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">ENGINEERING BENCHMARKS</text>
+
+      <g transform="translate(16, 44)">
+        <circle cx="4" cy="4" r="3" fill="#f97316" />
+        <text x="14" y="8" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">60 FPS Native UI Thread</text>
+      </g>
+
+      <g transform="translate(16, 72)">
+        <circle cx="4" cy="4" r="3" fill="#f97316" />
+        <text x="14" y="8" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">92% Code Reuse (React Native)</text>
+      </g>
+
+      <g transform="translate(16, 100)">
+        <circle cx="4" cy="4" r="3" fill="#f97316" />
+        <text x="14" y="8" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Biometric FaceID / Fingerprint</text>
+      </g>
+
+      <g transform="translate(16, 128)">
+        <circle cx="4" cy="4" r="3" fill="#f97316" />
+        <text x="14" y="8" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Offline SQLite + Auto Sync</text>
+      </g>
+
+      <g transform="translate(16, 156)">
+        <circle cx="4" cy="4" r="3" fill="#f97316" />
+        <text x="14" y="8" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">FCM &amp; APNs Push Pipelines</text>
+      </g>
+
+      <rect x="14" y="178" width="232" height="30" rx="6" fill="#f97316" />
+      <text x="38" y="198" fill="#0c0e16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">EXPLORE APP CODEBASE</text>
+    </g>
+  </g>
+
+  <!-- RIGHT DEVICE: Flagship Android Pixel (Material You Dark) -->
+  <g transform="translate(780, 68)" filter="url(#phone-shadow)">
+    <rect width="320" height="630" rx="38" fill="url(#iphone-rim)" stroke="#454f68" stroke-width="2" />
+    <rect x="8" y="8" width="304" height="614" rx="32" fill="#07080c" />
+
+    <!-- Punch Hole Camera (Android Center) -->
+    <circle cx="160" cy="26" r="7" fill="#000000" stroke="#1a1e2b" stroke-width="1.5" />
+    <circle cx="160" cy="26" r="3" fill="#131722" />
+
+    <!-- Android Status Bar -->
+    <text x="32" y="30" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">09:41</text>
+    <g transform="translate(244, 20)">
+      <!-- 5G and battery icon -->
+      <text x="0" y="10" fill="#10b981" font-family="monospace" font-size="9" font-weight="700">5G</text>
+      <rect x="22" y="1" width="18" height="9" rx="2" fill="#10b981" />
+    </g>
+
+    <!-- App Screen UI: Fleet Companion (Android View) -->
+    <g transform="translate(18, 54)">
+      <text x="8" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">Fleet Pilot</text>
+      <rect x="194" y="6" width="72" height="24" rx="12" fill="#10b981" fill-opacity="0.2" />
+      <text x="204" y="22" fill="#6ee7b7" font-family="monospace" font-size="10" font-weight="700">VERIFIED</text>
+
+      <!-- GPS Route Card -->
+      <g transform="translate(0, 40)">
+        <rect width="270" height="150" rx="16" fill="#121622" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+        <text x="14" y="26" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Active Load: LD-88921</text>
+        <text x="14" y="46" fill="#64748b" font-family="monospace" font-size="10">Turn-by-turn navigation active</text>
+
+        <!-- Mini map illustration -->
+        <rect x="14" y="58" width="242" height="50" rx="8" fill="#080a10" />
+        <path d="M 24,96 Q 80,72 140,82 T 240,68" fill="none" stroke="#f97316" stroke-width="3" />
+        <circle cx="140" cy="82" r="5" fill="#ffffff" />
+
+        <text x="14" y="132" fill="#6ee7b7" font-family="monospace" font-size="10" font-weight="700">Speed: 67.4 MPH • On Schedule</text>
+      </g>
+
+      <!-- Biometric Verification Card -->
+      <g transform="translate(0, 204)">
+        <rect width="270" height="110" rx="16" fill="#121622" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+        <text x="14" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Driver Compliance ID</text>
+        <text x="14" y="50" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Marcus Vance (DOT #4892)</text>
+        <rect x="14" y="68" width="140" height="24" rx="6" fill="#10b981" fill-opacity="0.15" />
+        <text x="24" y="84" fill="#6ee7b7" font-family="monospace" font-size="9.5" font-weight="700">✓ BIOMETRIC PASS</text>
+      </g>
+
+      <!-- Google Play Review Badge -->
+      <g transform="translate(0, 328)">
+        <rect width="270" height="100" rx="16" fill="#0f1422" stroke="#10b981" stroke-opacity="0.25" stroke-width="1" />
+        <text x="14" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Play Store Vitals</text>
+        <text x="14" y="50" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Crash-free users: <tspan fill="#10b981" font-weight="700">99.94%</tspan></text>
+        <text x="14" y="70" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Cold start latency: <tspan fill="#fdba74" font-weight="700">420ms</tspan></text>
+        <text x="14" y="90" fill="#6ee7b7" font-family="monospace" font-size="9.5">★ 4.9 Stars Rating (850+ reviews)</text>
+      </g>
+
+      <!-- Bottom Android Pill -->
+      <rect x="85" y="546" width="100" height="4" rx="2" fill="#ffffff" opacity="0.6" />
+    </g>
+  </g>
+</svg>
+

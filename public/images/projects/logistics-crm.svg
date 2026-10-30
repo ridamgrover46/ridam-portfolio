@@ -1,141 +1,225 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
   <defs>
     <linearGradient id="crm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080c14" />
-      <stop offset="100%" stop-color="#0f172a" />
+      <stop offset="0%" stop-color="#07090e" />
+      <stop offset="50%" stop-color="#0c0e17" />
+      <stop offset="100%" stop-color="#05070a" />
     </linearGradient>
-    <linearGradient id="cyan-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#38bdf8" />
+
+    <linearGradient id="amber-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
     </linearGradient>
+
+    <linearGradient id="emerald-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="panel-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#121622" />
+      <stop offset="100%" stop-color="#0b0d15" />
+    </linearGradient>
+
+    <filter id="crm-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
+  <!-- Base Canvas -->
   <rect width="1200" height="750" fill="url(#crm-bg)" rx="16" />
-  <rect width="1200" height="750" fill="none" stroke="#1e293b" stroke-width="2" rx="16" />
+  <rect width="1198" height="748" x="1" y="1" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" rx="15" />
 
-  <!-- Top bar -->
-  <rect x="0" y="0" width="1200" height="48" fill="#0b1120" rx="16" />
-  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
-  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
-  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
-  <rect x="110" y="14" width="310" height="20" rx="6" fill="#1e293b" />
-  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">app.freightbroker-crm.io / dispatch / live-board</text>
+  <!-- Window Header -->
+  <rect x="0" y="0" width="1200" height="46" fill="#090b12" rx="16" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" opacity="0.85" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" opacity="0.85" />
 
-  <!-- Sidebar -->
-  <rect x="24" y="68" width="220" height="654" rx="12" fill="#0b1324" stroke="#1e293b" stroke-width="1" />
-  <text x="44" y="104" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">FreightSync CRM</text>
-  <rect x="160" y="92" width="64" height="18" rx="4" fill="#0284c7" opacity="0.2" />
-  <text x="168" y="105" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">IN PROGRESS</text>
+  <rect x="100" y="11" width="380" height="24" rx="6" fill="#141824" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+  <circle cx="116" cy="23" r="3" fill="#10b981" />
+  <text x="128" y="27" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">
+    freight-crm.app / dispatch / live-board / load-manifests / #LD-88921
+  </text>
 
-  <rect x="36" y="130" width="196" height="36" rx="8" fill="#1e293b" />
-  <circle cx="56" cy="148" r="5" fill="#38bdf8" />
-  <text x="72" y="152" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Active Load Board</text>
+  <!-- Telemetry Indicator -->
+  <rect x="1000" y="12" width="176" height="22" rx="11" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <circle cx="1014" cy="23" r="3.5" fill="#10b981" />
+  <text x="1026" y="27" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">
+    GPS REFRESH: 2.4s • ONLINE
+  </text>
 
-  <rect x="36" y="174" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="192" r="4" fill="#64748b" />
-  <text x="72" y="196" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Carriers &amp; Drivers</text>
+  <!-- Top Metric Cards Row -->
+  <g transform="translate(24, 62)">
+    <!-- KPI 1: Active Fleet -->
+    <g transform="translate(0, 0)">
+      <rect width="272" height="88" rx="12" fill="url(#panel-surface)" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1" />
+      <text x="20" y="30" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">ACTIVE FLEET DISPATCH</text>
+      <text x="20" y="66" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">142 Units</text>
+      <rect x="190" y="26" width="64" height="22" rx="6" fill="#10b981" fill-opacity="0.15" />
+      <text x="200" y="41" fill="#10b981" font-family="monospace" font-size="10.5" font-weight="700">+12% WoW</text>
+    </g>
 
-  <rect x="36" y="218" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="236" r="4" fill="#64748b" />
-  <text x="72" y="240" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Broker Teams</text>
+    <!-- KPI 2: On-Time Rate -->
+    <g transform="translate(292, 0)">
+      <rect width="272" height="88" rx="12" fill="url(#panel-surface)" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1" />
+      <text x="20" y="30" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">ON-TIME DELIVERY SLA</text>
+      <text x="20" y="66" fill="#10b981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">98.6%</text>
+      <rect x="190" y="26" width="64" height="22" rx="6" fill="#10b981" fill-opacity="0.15" />
+      <text x="202" y="41" fill="#10b981" font-family="monospace" font-size="10.5" font-weight="700">OPTIMAL</text>
+    </g>
 
-  <rect x="36" y="262" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="280" r="4" fill="#64748b" />
-  <text x="72" y="284" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Rates &amp; Invoices</text>
+    <!-- KPI 3: In-Transit Freight -->
+    <g transform="translate(584, 0)">
+      <rect width="272" height="88" rx="12" fill="url(#panel-surface)" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1" />
+      <text x="20" y="30" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">GROSS REVENUE VALUATION</text>
+      <text x="20" y="66" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">$1,280,450</text>
+      <rect x="190" y="26" width="64" height="22" rx="6" fill="#f97316" fill-opacity="0.15" />
+      <text x="202" y="41" fill="#f97316" font-family="monospace" font-size="10.5" font-weight="700">ESCROW</text>
+    </g>
 
-  <!-- Third Party Integration status box -->
-  <rect x="36" y="470" width="196" height="230" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <text x="48" y="496" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Integrations Pipeline</text>
-  
-  <rect x="48" y="512" width="172" height="42" rx="6" fill="#1e293b" />
-  <text x="58" y="530" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">RingCentral VoIP</text>
-  <rect x="148" y="522" width="64" height="18" rx="4" fill="#f59e0b" opacity="0.2" />
-  <text x="154" y="534" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="9" font-weight="600">IN DEV</text>
+    <!-- KPI 4: DOT Compliance -->
+    <g transform="translate(876, 0)">
+      <rect width="276" height="88" rx="12" fill="url(#panel-surface)" stroke="#f97316" stroke-opacity="0.3" stroke-width="1" />
+      <text x="20" y="30" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">FMCSA SAFETY RATING</text>
+      <text x="20" y="66" fill="#f97316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">99.8 / 100</text>
+      <rect x="180" y="26" width="76" height="22" rx="6" fill="#f97316" fill-opacity="0.2" />
+      <text x="190" y="41" fill="#fdba74" font-family="monospace" font-size="10" font-weight="700">AUDIT PASS</text>
+    </g>
+  </g>
 
-  <rect x="48" y="562" width="172" height="42" rx="6" fill="#1e293b" />
-  <text x="58" y="580" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Gmail / Outlook</text>
-  <rect x="148" y="572" width="64" height="18" rx="4" fill="#f59e0b" opacity="0.2" />
-  <text x="154" y="584" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="9" font-weight="600">IN DEV</text>
+  <!-- Center Content: GPS Telematics Map + Live Dispatch Manifest -->
+  <g transform="translate(24, 168)">
+    <!-- Left Map View (Live GPS Tracking) -->
+    <g transform="translate(0, 0)">
+      <rect width="640" height="554" rx="14" fill="url(#panel-surface)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
 
-  <rect x="48" y="612" width="172" height="42" rx="6" fill="#1e293b" />
-  <text x="58" y="630" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Dispatch Automation</text>
-  <rect x="148" y="622" width="64" height="18" rx="4" fill="#64748b" opacity="0.3" />
-  <text x="153" y="634" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" font-weight="600">PLANNED</text>
+      <!-- Map Header -->
+      <text x="24" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Real-Time Transit Radar</text>
+      <text x="200" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Midwest to Southeast Corridor</text>
 
-  <!-- Main Content Dashboard -->
-  <rect x="264" y="68" width="912" height="654" rx="12" fill="#090f1d" stroke="#1e293b" stroke-width="1" />
+      <rect x="510" y="18" width="106" height="26" rx="6" fill="#141824" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+      <text x="522" y="35" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">SATELLITE 3D</text>
 
-  <!-- Metric KPI Cards -->
-  <rect x="288" y="92" width="200" height="90" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <text x="306" y="118" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">ACTIVE LOADS IN TRANSIT</text>
-  <text x="306" y="154" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="28" font-weight="800">48 Loads</text>
-  <text x="306" y="172" fill="#10b981" font-family="system-ui, sans-serif" font-size="11">● 100% on schedule</text>
+      <!-- Simulated Dark Vector Map Graphics -->
+      <g transform="translate(20, 56)">
+        <rect width="600" height="474" rx="10" fill="#080a11" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
 
-  <rect x="508" y="92" width="200" height="90" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <text x="526" y="118" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">PENDING DISPATCH</text>
-  <text x="526" y="154" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">14 Orders</text>
-  <text x="526" y="172" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="11">● Awaiting carrier assignment</text>
+        <!-- Grid Lines -->
+        <line x1="0" y1="80" x2="600" y2="80" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="0" y1="160" x2="600" y2="160" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="0" y1="240" x2="600" y2="240" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="0" y1="320" x2="600" y2="320" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="0" y1="400" x2="600" y2="400" stroke="#ffffff" stroke-opacity="0.03" />
 
-  <rect x="728" y="92" width="200" height="90" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <text x="746" y="118" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">CARRIER NETWORK</text>
-  <text x="746" y="154" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">128 Verified</text>
-  <text x="746" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">DOT &amp; FMCSA Verified</text>
+        <line x1="120" y1="0" x2="120" y2="474" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="240" y1="0" x2="240" y2="474" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="360" y1="0" x2="360" y2="474" stroke="#ffffff" stroke-opacity="0.03" />
+        <line x1="480" y1="0" x2="480" y2="474" stroke="#ffffff" stroke-opacity="0.03" />
 
-  <rect x="948" y="92" width="204" height="90" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-  <text x="966" y="118" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">COMMUNICATION SYNC</text>
-  <text x="966" y="154" fill="#10b981" font-family="system-ui, sans-serif" font-size="28" font-weight="800">Live API</text>
-  <text x="966" y="172" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11">Webhooks &amp; Socket Ready</text>
+        <!-- Route Path 1: Chicago (ORD) -> Nashville (BNA) -> Atlanta (ATL) -> Miami (MIA) -->
+        <path d="M 120,90 Q 220,180 290,260 T 460,410" fill="none" stroke="#f97316" stroke-width="3.5" stroke-dasharray="10 5" filter="url(#crm-glow)" />
 
-  <!-- Live Operations Table -->
-  <text x="288" y="216" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Dispatch Fleet Management</text>
+        <!-- Route Path 2: Dallas -> Memphis -> Charlotte -->
+        <path d="M 60,320 Q 200,280 320,240 T 520,210" fill="none" stroke="#10b981" stroke-width="2.5" opacity="0.65" />
 
-  <!-- Table header -->
-  <rect x="288" y="232" width="864" height="38" rx="6" fill="#111c33" />
-  <text x="306" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">LOAD ID</text>
-  <text x="400" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">ORIGIN ➔ DESTINATION</text>
-  <text x="640" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">CARRIER</text>
-  <text x="810" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">BROKER</text>
-  <text x="930" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">RATE</text>
-  <text x="1040" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STATUS</text>
+        <!-- Waypoint: Chicago Hub -->
+        <circle cx="120" cy="90" r="14" fill="#f97316" fill-opacity="0.2" />
+        <circle cx="120" cy="90" r="6" fill="#f97316" />
+        <rect x="74" y="58" width="92" height="22" rx="4" fill="#0d111b" stroke="#f97316" stroke-width="1" />
+        <text x="82" y="73" fill="#ffffff" font-family="monospace" font-size="10" font-weight="700">ORD: LOADED</text>
 
-  <!-- Table rows -->
-  <rect x="288" y="278" width="864" height="52" rx="6" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-  <text x="306" y="308" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">#LD-9482</text>
-  <text x="400" y="308" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Chicago, IL ➔ Dallas, TX</text>
-  <text x="640" y="308" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Apex Freight Lines</text>
-  <text x="810" y="308" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">R. Grover</text>
-  <text x="930" y="308" fill="#ffffff" font-family="monospace" font-size="12" font-weight="600">$2,850</text>
-  <rect x="1036" y="292" width="96" height="24" rx="4" fill="#0284c7" opacity="0.2" />
-  <text x="1052" y="308" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" font-weight="700">IN TRANSIT</text>
+        <!-- Waypoint: Atlanta Hub -->
+        <circle cx="290" cy="260" r="18" fill="#f97316" fill-opacity="0.25" filter="url(#crm-glow)" />
+        <circle cx="290" cy="260" r="7" fill="#ffffff" />
+        <rect x="238" y="218" width="104" height="26" rx="5" fill="#0d111b" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+        <text x="248" y="235" fill="#fdba74" font-family="monospace" font-size="10.5" font-weight="700">TRUCK #88921</text>
 
-  <rect x="288" y="338" width="864" height="52" rx="6" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-  <text x="306" y="368" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">#LD-9481</text>
-  <text x="400" y="368" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Atlanta, GA ➔ Miami, FL</text>
-  <text x="640" y="368" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Sunbelt Logistics</text>
-  <text x="810" y="368" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">M. Davis</text>
-  <text x="930" y="368" fill="#ffffff" font-family="monospace" font-size="12" font-weight="600">$1,920</text>
-  <rect x="1036" y="352" width="96" height="24" rx="4" fill="#10b981" opacity="0.2" />
-  <text x="1052" y="368" fill="#34d399" font-family="system-ui, sans-serif" font-size="10" font-weight="700">DELIVERED</text>
+        <!-- Waypoint: Miami Port -->
+        <circle cx="460" cy="410" r="14" fill="#10b981" fill-opacity="0.2" />
+        <circle cx="460" cy="410" r="6" fill="#10b981" />
+        <rect x="420" y="426" width="80" height="22" rx="4" fill="#0d111b" stroke="#10b981" stroke-width="1" />
+        <text x="428" y="441" fill="#6ee7b7" font-family="monospace" font-size="10" font-weight="700">MIA: DEST</text>
 
-  <rect x="288" y="398" width="864" height="52" rx="6" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-  <text x="306" y="428" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">#LD-9480</text>
-  <text x="400" y="428" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Seattle, WA ➔ Denver, CO</text>
-  <text x="640" y="428" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Pacific Northwest Haul</text>
-  <text x="810" y="428" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">R. Grover</text>
-  <text x="930" y="428" fill="#ffffff" font-family="monospace" font-size="12" font-weight="600">$3,400</text>
-  <rect x="1036" y="412" width="96" height="24" rx="4" fill="#f59e0b" opacity="0.2" />
-  <text x="1054" y="428" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="10" font-weight="700">ASSIGNED</text>
+        <!-- Telemetry Floating Overlay Card -->
+        <g transform="translate(320, 280)">
+          <rect width="260" height="130" rx="10" fill="#0d111a" fill-opacity="0.95" stroke="#f97316" stroke-opacity="0.4" stroke-width="1.5" />
+          <text x="16" y="26" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Freight Telemetry HUD</text>
+          <rect x="180" y="12" width="66" height="18" rx="4" fill="#10b981" fill-opacity="0.2" />
+          <text x="188" y="25" fill="#10b981" font-family="monospace" font-size="9" font-weight="700">IN TRANSIT</text>
 
-  <!-- Route Visualizer Preview -->
-  <rect x="288" y="468" width="864" height="226" rx="10" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-  <text x="308" y="496" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Route Telemetry &amp; Waypoint Progress</text>
-  <!-- Route Line Mockup -->
-  <path d="M330 600 C 450 540, 600 640, 750 560 C 850 500, 950 580, 1080 530" fill="none" stroke="#0284c7" stroke-width="3" stroke-dasharray="6 4" />
-  <circle cx="330" cy="600" r="7" fill="#38bdf8" />
-  <circle cx="750" cy="560" r="9" fill="#10b981" />
-  <circle cx="1080" cy="530" r="7" fill="#f59e0b" />
-  <text x="310" y="630" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Origin: Chicago</text>
-  <text x="730" y="540" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Truck Active (GPS 62mph)</text>
-  <text x="1040" y="560" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Dest: Dallas</text>
+          <text x="16" y="52" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Current Speed: <tspan fill="#ffffff" font-weight="700">67.4 MPH</tspan></text>
+          <text x="16" y="72" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Reefer Unit Temp: <tspan fill="#38bdf8" font-weight="700">34.2°F</tspan></text>
+          <text x="16" y="92" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">ETA Miami Port: <tspan fill="#fdba74" font-weight="700">Today 18:45 EST</tspan></text>
+          <text x="16" y="112" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Driver: <tspan fill="#ffffff" font-weight="600">Marcus Vance (DOT #4892)</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Active Manifest Table + Carrier Compliance -->
+    <g transform="translate(664, 0)">
+      <rect width="488" height="554" rx="14" fill="url(#panel-surface)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+      <text x="24" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Active Load Manifests</text>
+      <text x="210" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Live Rate Confirmations</text>
+
+      <!-- Manifest Cards -->
+      <!-- Card 1 -->
+      <g transform="translate(20, 56)">
+        <rect width="448" height="110" rx="10" fill="#0f1320" stroke="#f97316" stroke-opacity="0.3" stroke-width="1" />
+        <text x="18" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">LD-88921 • Medical Supplies</text>
+        <rect x="354" y="14" width="78" height="20" rx="4" fill="#f97316" fill-opacity="0.2" />
+        <text x="362" y="28" fill="#fdba74" font-family="monospace" font-size="9.5" font-weight="700">$4,850.00</text>
+
+        <text x="18" y="52" fill="#94a3b8" font-family="monospace" font-size="11">Origin: Chicago IL (ORD) → Dest: Miami FL (MIA)</text>
+        <text x="18" y="70" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Carrier: Apex Freight Lines • MC #928410 • Reefer 53ft</text>
+
+        <!-- Compliance Pill & Action -->
+        <rect x="18" y="82" width="130" height="18" rx="4" fill="#10b981" fill-opacity="0.15" />
+        <text x="26" y="94" fill="#6ee7b7" font-family="monospace" font-size="9" font-weight="700">✓ DOT VERIFIED ACTIVE</text>
+
+        <rect x="340" y="78" width="92" height="24" rx="6" fill="#f97316" />
+        <text x="354" y="94" fill="#0c0e16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">DIAL DRIVER</text>
+      </g>
+
+      <!-- Card 2 -->
+      <g transform="translate(20, 178)">
+        <rect width="448" height="110" rx="10" fill="#0f1320" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+        <text x="18" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">LD-88914 • Automotive Components</text>
+        <rect x="354" y="14" width="78" height="20" rx="4" fill="#10b981" fill-opacity="0.2" />
+        <text x="362" y="28" fill="#6ee7b7" font-family="monospace" font-size="9.5" font-weight="700">$3,200.00</text>
+
+        <text x="18" y="52" fill="#94a3b8" font-family="monospace" font-size="11">Origin: Detroit MI → Dest: Dallas TX</text>
+        <text x="18" y="70" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Carrier: Great Lakes Express • MC #847291 • Dry Van</text>
+
+        <rect x="18" y="82" width="130" height="18" rx="4" fill="#10b981" fill-opacity="0.15" />
+        <text x="26" y="94" fill="#6ee7b7" font-family="monospace" font-size="9" font-weight="700">✓ DOT VERIFIED ACTIVE</text>
+      </g>
+
+      <!-- Card 3 -->
+      <g transform="translate(20, 300)">
+        <rect width="448" height="110" rx="10" fill="#0f1320" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+        <text x="18" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">LD-88890 • Industrial Solar Panels</text>
+        <rect x="354" y="14" width="78" height="20" rx="4" fill="#10b981" fill-opacity="0.2" />
+        <text x="362" y="28" fill="#6ee7b7" font-family="monospace" font-size="9.5" font-weight="700">$5,600.00</text>
+
+        <text x="18" y="52" fill="#94a3b8" font-family="monospace" font-size="11">Origin: Austin TX → Dest: Phoenix AZ</text>
+        <text x="18" y="70" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Carrier: Lone Star Transport • MC #392817 • Flatbed</text>
+
+        <rect x="18" y="82" width="130" height="18" rx="4" fill="#10b981" fill-opacity="0.15" />
+        <text x="26" y="94" fill="#6ee7b7" font-family="monospace" font-size="9" font-weight="700">✓ DOT VERIFIED ACTIVE</text>
+      </g>
+
+      <!-- Bottom VoIP Integration Note -->
+      <g transform="translate(20, 428)">
+        <rect width="448" height="96" rx="10" fill="#141825" stroke="#f97316" stroke-opacity="0.2" stroke-width="1" />
+        <circle cx="28" cy="28" r="10" fill="#f97316" />
+        <path d="M 24,24 Q 28,20 32,24 L 30,27 Q 27,26 26,29 L 29,32" fill="none" stroke="#0c0e16" stroke-width="1.8" />
+        <text x="48" y="32" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">RingCentral VoIP Integration Active</text>
+        <text x="18" y="58" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Click-to-dial direct calling &amp; automated rate-con PDF email sync.</text>
+        <text x="18" y="76" fill="#fdba74" font-family="monospace" font-size="10.5">RBAC: Broker • Dispatcher • Admin • Escrow Auditor</text>
+      </g>
+    </g>
+  </g>
 </svg>
-

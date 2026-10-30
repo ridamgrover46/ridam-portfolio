@@ -12,6 +12,7 @@ import { SkillsSection } from "@/components/sections/skills-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { Footer } from "@/components/layout/footer";
+import { MobileQuickBar } from "@/components/layout/mobile-quick-bar";
 
 export default function Home() {
   const [selectedService, setSelectedService] = useState("");
@@ -42,6 +43,9 @@ export default function Home() {
 
         {/* Global Minimalist Footer */}
         <Footer />
+
+        {/* Mobile Sticky Quick Contact Pill Bar */}
+        <MobileQuickBar />
       </div>
     </SmoothScrollProvider>
   );

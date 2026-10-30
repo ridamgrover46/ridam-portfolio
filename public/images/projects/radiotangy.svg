@@ -1,131 +1,330 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="rt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0c16" />
-      <stop offset="100%" stop-color="#141829" />
+      <stop offset="0%" stop-color="#08090d" />
+      <stop offset="50%" stop-color="#0d0f17" />
+      <stop offset="100%" stop-color="#060709" />
     </linearGradient>
-    <linearGradient id="rt-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6" />
-      <stop offset="50%" stop-color="#6366f1" />
-      <stop offset="100%" stop-color="#3b82f6" />
+
+    <!-- Warm Amber / Gold Gradients -->
+    <linearGradient id="amber-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="50%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#f59e0b" />
     </linearGradient>
-    <filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur" />
+
+    <linearGradient id="card-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#0c0e16" />
+    </linearGradient>
+
+    <linearGradient id="album-art" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1b12" />
+      <stop offset="50%" stop-color="#451a03" />
+      <stop offset="100%" stop-color="#170c06" />
+    </linearGradient>
+
+    <!-- Ambient Shadow Filter -->
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+
+    <filter id="amber-bloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- Background -->
+  <!-- Canvas Surface -->
   <rect width="1200" height="750" fill="url(#rt-bg)" rx="16" />
-  <rect width="1200" height="750" fill="none" stroke="#252b48" stroke-width="2" rx="16" />
+  <rect width="1198" height="748" x="1" y="1" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" rx="15" />
 
-  <!-- Top Window Bar -->
-  <rect x="0" y="0" width="1200" height="48" fill="#101322" rx="16" />
-  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
-  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
-  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
-  <rect x="110" y="14" width="280" height="20" rx="6" fill="#1a1e35" />
-  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="500">radiotangy.com / series / whispers-of-the-night</text>
+  <!-- macOS Styled Application Header Bar -->
+  <rect x="0" y="0" width="1200" height="46" fill="#0b0d14" rx="16" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" opacity="0.85" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" opacity="0.85" />
 
-  <!-- Sidebar -->
-  <rect x="24" y="68" width="220" height="580" rx="12" fill="#12162a" stroke="#232946" stroke-width="1" />
-  <text x="44" y="104" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">RadioTangy</text>
-  <rect x="156" y="92" width="68" height="18" rx="4" fill="#6366f1" opacity="0.2" />
-  <text x="166" y="105" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="10" font-weight="600">AUDIO PRO</text>
+  <!-- Breadcrumb Location Pill -->
+  <rect x="100" y="11" width="360" height="24" rx="6" fill="#151926" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+  <circle cx="116" cy="23" r="3" fill="#10b981" />
+  <text x="128" y="27" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">
+    radiotangy.com / studio / series / whispers-of-the-night / ep-04
+  </text>
 
-  <!-- Sidebar Nav items -->
-  <rect x="36" y="130" width="196" height="36" rx="8" fill="#1e2442" />
-  <circle cx="56" cy="148" r="5" fill="#818cf8" />
-  <text x="72" y="152" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Audio Stories</text>
+  <!-- Live Status Badge -->
+  <rect x="1040" y="12" width="136" height="22" rx="11" fill="#f97316" fill-opacity="0.12" stroke="#f97316" stroke-opacity="0.3" stroke-width="1" />
+  <circle cx="1054" cy="23" r="3.5" fill="#f97316" />
+  <text x="1066" y="27" fill="#fdba74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">
+    320 KBPS LOSSLESS
+  </text>
 
-  <rect x="36" y="174" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="192" r="4" fill="#64748b" />
-  <text x="72" y="196" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Seasons &amp; Series</text>
+  <!-- Left Sidebar Panel -->
+  <g transform="translate(24, 66)">
+    <rect width="230" height="660" rx="12" fill="url(#card-surface)" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
 
-  <rect x="36" y="218" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="236" r="4" fill="#64748b" />
-  <text x="72" y="240" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Episodes Library</text>
+    <!-- App Brand -->
+    <rect x="20" y="22" width="32" height="32" rx="8" fill="url(#amber-glow)" />
+    <polygon points="32,32 44,38 32,44" fill="#0c0e16" />
+    <text x="62" y="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">RadioTangy</text>
+    <text x="62" y="50" fill="#f97316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" letter-spacing="1">AUDIO ENGINE</text>
 
-  <rect x="36" y="262" width="196" height="36" rx="8" fill="transparent" />
-  <circle cx="56" cy="280" r="4" fill="#64748b" />
-  <text x="72" y="284" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Subscribers &amp; Access</text>
+    <!-- Nav List -->
+    <g transform="translate(16, 80)">
+      <!-- Active Item -->
+      <rect width="198" height="38" rx="8" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-opacity="0.25" stroke-width="1" />
+      <circle cx="22" cy="19" r="4" fill="#f97316" />
+      <text x="36" y="23" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Featured Stories</text>
+      <rect x="156" y="11" width="30" height="16" rx="4" fill="#f97316" fill-opacity="0.25" />
+      <text x="163" y="23" fill="#fdba74" font-family="monospace" font-size="9" font-weight="700">LIVE</text>
 
-  <!-- Now Playing in sidebar -->
-  <rect x="36" y="470" width="196" height="160" rx="10" fill="#181d36" stroke="#2e365e" stroke-width="1" />
-  <rect x="48" y="482" width="56" height="56" rx="8" fill="#4338ca" />
-  <circle cx="76" cy="510" r="14" fill="#6366f1" />
-  <polygon points="73,502 83,510 73,518" fill="#ffffff" />
-  <text x="114" y="500" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Season 2: Ep 4</text>
-  <text x="114" y="518" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">The Silent Fog</text>
-  <!-- Mini waveform -->
-  <path d="M48 565 L52 555 L56 575 L60 550 L64 570 L68 558 L72 568 L76 545 L80 575 L84 560 L88 565 L92 550 L96 570 L100 555 L104 565 L108 558 L112 568 L116 550 L120 572 L124 560 L128 565 L132 555 L136 570 L140 558 L144 565 L148 552 L152 572 L156 560 L160 565 L164 555 L168 568 L172 555 L176 565 L180 558 L184 565 L188 558 L192 565 L196 560 L200 565 L204 558 L208 565 L212 560 L216 565 L220 560" stroke="#818cf8" stroke-width="2" fill="none" />
+      <g transform="translate(0, 48)">
+        <rect width="198" height="36" rx="8" fill="transparent" />
+        <circle cx="22" cy="18" r="3" fill="#64748b" />
+        <text x="36" y="22" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Seasons &amp; Series</text>
+      </g>
 
-  <!-- Main Content Area -->
-  <rect x="264" y="68" width="912" height="580" rx="12" fill="#0f1222" stroke="#232946" stroke-width="1" />
+      <g transform="translate(0, 92)">
+        <rect width="198" height="36" rx="8" fill="transparent" />
+        <circle cx="22" cy="18" r="3" fill="#64748b" />
+        <text x="36" y="22" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Episodes Library</text>
+      </g>
 
-  <!-- Header Banner -->
-  <rect x="284" y="88" width="872" height="180" rx="12" fill="url(#rt-accent)" opacity="0.15" />
-  <rect x="284" y="88" width="872" height="180" rx="12" stroke="#4f46e5" stroke-width="1" fill="none" />
-  
-  <text x="312" y="128" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">ORIGINAL AUDIO SERIES</text>
-  <text x="312" y="166" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">Whispers of the Night: Season 2</text>
-  <text x="312" y="196" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">Immersive 3D audio story produced with dynamic binaural soundscapes &amp; episodic telemetry.</text>
-  
-  <rect x="312" y="216" width="130" height="34" rx="17" fill="#6366f1" />
-  <text x="342" y="238" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">▶ Play Season</text>
-  <rect x="454" y="216" width="130" height="34" rx="17" fill="#1e2442" stroke="#3b447a" stroke-width="1" />
-  <text x="478" y="238" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">View 12 Episodes</text>
+      <g transform="translate(0, 136)">
+        <rect width="198" height="36" rx="8" fill="transparent" />
+        <circle cx="22" cy="18" r="3" fill="#64748b" />
+        <text x="36" y="22" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Subscribers &amp; RLS</text>
+      </g>
 
-  <!-- Episode Grid / List -->
-  <text x="284" y="304" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Episodes &amp; Chapters</text>
-  
-  <!-- Episode Row 1 -->
-  <rect x="284" y="324" width="872" height="64" rx="10" fill="#151930" stroke="#262e54" stroke-width="1" />
-  <circle cx="316" cy="356" r="16" fill="#6366f1" />
-  <polygon points="314,350 322,356 314,362" fill="#ffffff" />
-  <text x="348" y="352" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 01: The Midnight Crossing</text>
-  <text x="348" y="370" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Duration: 28:14 • Mastered Lossless Audio • Season Premiere</text>
-  <rect x="1040" y="342" width="96" height="28" rx="6" fill="#10b981" opacity="0.15" />
-  <text x="1054" y="360" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600">COMPLETED</text>
+      <g transform="translate(0, 180)">
+        <rect width="198" height="36" rx="8" fill="transparent" />
+        <circle cx="22" cy="18" r="3" fill="#64748b" />
+        <text x="36" y="22" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Audio Telemetry</text>
+      </g>
+    </g>
 
-  <!-- Episode Row 2 -->
-  <rect x="284" y="398" width="872" height="64" rx="10" fill="#181e3a" stroke="#4338ca" stroke-width="1.5" />
-  <circle cx="316" cy="430" r="16" fill="#818cf8" />
-  <rect x="311" y="424" width="3" height="12" fill="#0f172a" />
-  <rect x="317" y="424" width="3" height="12" fill="#0f172a" />
-  <text x="348" y="426" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 02: Echoes from the Deep</text>
-  <text x="348" y="444" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12">Playing now: 14:32 / 32:40 • High-Definition Stream</text>
-  <!-- Mini Progress bar -->
-  <rect x="760" y="428" width="240" height="6" rx="3" fill="#2d3763" />
-  <rect x="760" y="428" width="110" height="6" rx="3" fill="#6366f1" />
-  <rect x="1040" y="416" width="96" height="28" rx="6" fill="#6366f1" opacity="0.2" />
-  <text x="1062" y="434" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PLAYING</text>
+    <!-- Supabase Security Badge -->
+    <g transform="translate(16, 440)">
+      <rect width="198" height="96" rx="10" fill="#0e111a" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+      <circle cx="24" cy="24" r="5" fill="#10b981" />
+      <text x="38" y="28" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">Supabase RLS Active</text>
+      <text x="18" y="48" fill="#64748b" font-family="monospace" font-size="9.5">Token: signed_jwk_sec256</text>
+      <text x="18" y="64" fill="#64748b" font-family="monospace" font-size="9.5">CDN: edge-us-east-1</text>
+      <text x="18" y="80" fill="#10b981" font-family="monospace" font-size="9.5">State: 0ms buffer lock</text>
+    </g>
 
-  <!-- Episode Row 3 -->
-  <rect x="284" y="472" width="872" height="64" rx="10" fill="#151930" stroke="#262e54" stroke-width="1" />
-  <circle cx="316" cy="504" r="16" fill="#1e2442" stroke="#3d4677" stroke-width="1" />
-  <polygon points="314,498 322,504 314,510" fill="#94a3b8" />
-  <text x="348" y="500" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 03: The Clockmaker's Secret</text>
-  <text x="348" y="518" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Duration: 34:10 • Protected Access • Requires Subscription</text>
-  <rect x="1040" y="490" width="96" height="28" rx="6" fill="#f59e0b" opacity="0.15" />
-  <text x="1058" y="508" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PREMIUM</text>
+    <!-- Mini Playing Artwork -->
+    <g transform="translate(16, 552)">
+      <rect width="198" height="90" rx="10" fill="#0f131f" stroke="#f97316" stroke-opacity="0.3" stroke-width="1" />
+      <rect x="12" y="14" width="62" height="62" rx="8" fill="url(#album-art)" />
+      <circle cx="43" cy="45" r="16" fill="url(#amber-glow)" opacity="0.9" />
+      <polygon points="40,39 50,45 40,51" fill="#0c0e16" />
+      <text x="84" y="32" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">Ep 4: Fog</text>
+      <text x="84" y="47" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5">Season 2</text>
+      <text x="84" y="65" fill="#f97316" font-family="monospace" font-size="9.5" font-weight="700">01:24 / 04:15</text>
+    </g>
+  </g>
 
-  <!-- Bottom Player Bar -->
-  <rect x="264" y="560" width="912" height="88" rx="0" fill="#0b0e1b" stroke="#252b48" stroke-width="1" />
-  <!-- Scrubber -->
-  <rect x="284" y="574" width="872" height="4" rx="2" fill="#202742" />
-  <rect x="284" y="574" width="410" height="4" rx="2" fill="#6366f1" />
-  <circle cx="694" cy="576" r="6" fill="#ffffff" filter="url(#rt-glow)" />
+  <!-- Main Player & Catalog Content -->
+  <g transform="translate(274, 66)">
+    <!-- Hero Player Card -->
+    <g filter="url(#soft-shadow)">
+      <rect width="902" height="340" rx="14" fill="url(#card-surface)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
 
-  <text x="284" y="608" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Echoes from the Deep</text>
-  <text x="284" y="626" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">RadioTangy Original • Season 2 • Chapter 4</text>
+      <!-- Ambient Glow Behind Album Art -->
+      <circle cx="160" cy="170" r="110" fill="#f97316" fill-opacity="0.15" filter="url(#amber-bloom)" />
 
-  <!-- Player controls center -->
-  <circle cx="680" cy="614" r="18" fill="#6366f1" />
-  <polygon points="676,606 688,614 676,622" fill="#ffffff" />
-  <text x="590" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">⏮</text>
-  <text x="730" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">⏭</text>
+      <!-- Large Master Artwork -->
+      <rect x="36" y="36" width="220" height="220" rx="14" fill="url(#album-art)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5" />
+      <!-- Vinyl Grooves Illustration -->
+      <circle cx="146" cy="146" r="85" fill="none" stroke="#f97316" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="8 4" />
+      <circle cx="146" cy="146" r="65" fill="none" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1" />
+      <circle cx="146" cy="146" r="45" fill="none" stroke="#f97316" stroke-opacity="0.35" stroke-width="1.5" />
+      <circle cx="146" cy="146" r="28" fill="url(#amber-glow)" />
+      <circle cx="146" cy="146" r="8" fill="#0c0e16" />
 
-  <text x="1060" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">14:32 / 32:40</text>
+      <!-- Story Metadata -->
+      <g transform="translate(286, 36)">
+        <rect width="112" height="22" rx="4" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-opacity="0.3" stroke-width="1" />
+        <text x="10" y="15" fill="#f97316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" letter-spacing="1">
+          EPISODIC PREMIER
+        </text>
+
+        <text x="0" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">
+          Whispers of the Night: The Signal
+        </text>
+        <text x="0" y="82" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="400">
+          Season 2 • Episode 04 • Immersive 3D Spatial Audio Mix • Narrated by Sarah Vance
+        </text>
+
+        <!-- Waveform Spectrum Visualizer -->
+        <g transform="translate(0, 106)">
+          <rect width="580" height="66" rx="8" fill="#090b12" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+
+          <!-- Dynamic Waveform Frequency Bars -->
+          <g fill="url(#amber-glow)">
+            <!-- Played region (glowing amber) -->
+            <rect x="18" y="24" width="3.5" height="18" rx="1.5" />
+            <rect x="25" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="32" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="39" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="46" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="53" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="60" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="67" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="74" y="20" width="3.5" height="26" rx="1.5" />
+            <rect x="81" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="88" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="95" y="4" width="3.5" height="58" rx="1.5" />
+            <rect x="102" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="109" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="116" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="123" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="130" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="137" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="144" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="151" y="22" width="3.5" height="22" rx="1.5" />
+            <rect x="158" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="165" y="4" width="3.5" height="58" rx="1.5" />
+            <rect x="172" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="179" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="186" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="193" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="200" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="207" y="14" width="3.5" height="38" rx="1.5" />
+          </g>
+
+          <!-- Playhead line with glowing bead -->
+          <line x1="214" y1="4" x2="214" y2="62" stroke="#ffffff" stroke-width="2" />
+          <circle cx="214" cy="33" r="5" fill="#ffffff" filter="url(#amber-bloom)" />
+
+          <!-- Unplayed region (muted grey/amber) -->
+          <g fill="#334155" opacity="0.6">
+            <rect x="221" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="228" y="22" width="3.5" height="22" rx="1.5" />
+            <rect x="235" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="242" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="249" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="256" y="20" width="3.5" height="26" rx="1.5" />
+            <rect x="263" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="270" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="277" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="284" y="24" width="3.5" height="18" rx="1.5" />
+            <rect x="291" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="298" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="305" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="312" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="319" y="22" width="3.5" height="22" rx="1.5" />
+            <rect x="326" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="333" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="340" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="347" y="20" width="3.5" height="26" rx="1.5" />
+            <rect x="354" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="361" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="368" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="375" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="382" y="24" width="3.5" height="18" rx="1.5" />
+            <rect x="389" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="396" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="403" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="410" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="417" y="20" width="3.5" height="26" rx="1.5" />
+            <rect x="424" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="431" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="438" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="445" y="22" width="3.5" height="22" rx="1.5" />
+            <rect x="452" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="459" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="466" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="473" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="480" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="487" y="24" width="3.5" height="18" rx="1.5" />
+            <rect x="494" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="501" y="10" width="3.5" height="46" rx="1.5" />
+            <rect x="508" y="6" width="3.5" height="54" rx="1.5" />
+            <rect x="515" y="14" width="3.5" height="38" rx="1.5" />
+            <rect x="522" y="20" width="3.5" height="26" rx="1.5" />
+            <rect x="529" y="12" width="3.5" height="42" rx="1.5" />
+            <rect x="536" y="18" width="3.5" height="30" rx="1.5" />
+            <rect x="543" y="8" width="3.5" height="50" rx="1.5" />
+            <rect x="550" y="16" width="3.5" height="34" rx="1.5" />
+            <rect x="557" y="22" width="3.5" height="22" rx="1.5" />
+          </g>
+        </g>
+
+        <!-- Player Controls Bar -->
+        <g transform="translate(0, 192)">
+          <!-- Big Play Button -->
+          <circle cx="24" cy="24" r="22" fill="url(#amber-glow)" filter="url(#soft-shadow)" />
+          <polygon points="20,16 33,24 20,32" fill="#0c0e16" />
+
+          <!-- Speed Pill -->
+          <rect x="64" y="8" width="56" height="32" rx="8" fill="#141824" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+          <text x="78" y="28" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">1.0x</text>
+
+          <!-- Audio Scrubber Time -->
+          <text x="136" y="28" fill="#f97316" font-family="monospace" font-size="12" font-weight="700">01:24</text>
+          <text x="178" y="28" fill="#64748b" font-family="monospace" font-size="12">/</text>
+          <text x="190" y="28" fill="#94a3b8" font-family="monospace" font-size="12">04:15</text>
+
+          <!-- Dolby Atmos Lossless Pill -->
+          <rect x="440" y="8" width="140" height="32" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+          <circle cx="456" cy="24" r="4" fill="#10b981" />
+          <text x="468" y="28" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">DOLBY ATMOS</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Episodes Table -->
+    <g transform="translate(0, 360)">
+      <rect width="902" height="300" rx="14" fill="url(#card-surface)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+      <text x="28" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Season 2 Episodes</text>
+      <text x="180" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">8 Chapters • Full Master Audio Stream</text>
+
+      <!-- Episode Rows -->
+      <!-- Row 1 (Current Active) -->
+      <g transform="translate(24, 56)">
+        <rect width="854" height="48" rx="8" fill="#f97316" fill-opacity="0.1" stroke="#f97316" stroke-opacity="0.25" stroke-width="1" />
+        <circle cx="24" cy="24" r="10" fill="#f97316" />
+        <polygon points="21,20 28,24 21,28" fill="#0c0e16" />
+        <text x="46" y="29" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600">04. The Midnight Signal</text>
+        <rect x="236" y="15" width="76" height="18" rx="4" fill="#f97316" fill-opacity="0.2" />
+        <text x="244" y="27" fill="#fdba74" font-family="monospace" font-size="9" font-weight="700">NOW PLAYING</text>
+        <text x="640" y="29" fill="#94a3b8" font-family="monospace" font-size="11">24.2k plays</text>
+        <text x="780" y="29" fill="#fdba74" font-family="monospace" font-size="11" font-weight="700">04:15</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(24, 114)">
+        <rect width="854" height="48" rx="8" fill="#10131d" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+        <circle cx="24" cy="24" r="10" fill="#1e293b" />
+        <polygon points="21,20 28,24 21,28" fill="#94a3b8" />
+        <text x="46" y="29" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="500">03. The Abandoned Lighthouse</text>
+        <text x="640" y="29" fill="#64748b" font-family="monospace" font-size="11">38.9k plays</text>
+        <text x="780" y="29" fill="#94a3b8" font-family="monospace" font-size="11">05:42</text>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(24, 172)">
+        <rect width="854" height="48" rx="8" fill="#10131d" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+        <circle cx="24" cy="24" r="10" fill="#1e293b" />
+        <polygon points="21,20 28,24 21,28" fill="#94a3b8" />
+        <text x="46" y="29" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="500">02. Echoes in the Static</text>
+        <text x="640" y="29" fill="#64748b" font-family="monospace" font-size="11">51.1k plays</text>
+        <text x="780" y="29" fill="#94a3b8" font-family="monospace" font-size="11">06:18</text>
+      </g>
+
+      <!-- Row 4 -->
+      <g transform="translate(24, 230)">
+        <rect width="854" height="48" rx="8" fill="#10131d" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+        <circle cx="24" cy="24" r="10" fill="#1e293b" />
+        <polygon points="21,20 28,24 21,28" fill="#94a3b8" />
+        <text x="46" y="29" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="500">01. The Arrival at Duskhaven</text>
+        <text x="640" y="29" fill="#64748b" font-family="monospace" font-size="11">64.3k plays</text>
+        <text x="780" y="29" fill="#94a3b8" font-family="monospace" font-size="11">04:55</text>
+      </g>
+    </g>
+  </g>
 </svg>
-

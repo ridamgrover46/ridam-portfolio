@@ -204,6 +204,93 @@ export const projectsData: Project[] = [
       "Standardized multi-role permissions for enterprise logistics teams.",
     ],
     prevSlug: "radiotangy",
+    nextSlug: "zenith-mobile",
+  },
+  {
+    slug: "zenith-mobile",
+    title: "Zenith Mobile Suite (iOS & Android)",
+    tagline: "Cross-Platform Mobile Ecosystem with Verified App Store & Play Store Approvals",
+    category: "Mobile Applications (iOS & Android)",
+    featured: true,
+    status: "Production",
+    statusColor: "emerald",
+    previewImage: "/images/projects/mobile-apps.svg",
+    summary:
+      "Enterprise cross-platform mobile suite built with React Native and Expo, featuring offline synchronization, biometric authentication, push notification orchestration, and 100% first-pass production approval on Apple App Store & Google Play Console.",
+    problemStatement:
+      "Companies require unified mobile user experiences across iOS and Android without maintaining diverging native codebases, requiring strict compliance with Apple Human Interface Guidelines and Google Play privacy security policies.",
+    myRole: "Mobile Systems Architect & Full-Stack Developer",
+    contributionHighlights: [
+      "Architected cross-platform mobile architecture in React Native with Expo Application Services (EAS).",
+      "Achieved 100% first-pass human review approval on both Apple App Store and Google Play Console.",
+      "Engineered biometric FaceID / TouchID authentication with encrypted keychain credential storage.",
+      "Built offline-first SQLite cache layer syncing seamlessly upon network reconnection.",
+      "Configured high-density automated build pipelines reducing release turnaround to under 20 minutes.",
+    ],
+    technicalArchitecture: {
+      overview:
+        "Unified TypeScript codebase sharing 92% business logic across iOS and Android, backed by serverless microservices and real-time push infrastructure.",
+      frontend:
+        "React Native 0.74, Expo SDK, TypeScript, NativeWind / Tailwind CSS, Reanimated 3, Gesture Handler.",
+      backend:
+        "Node.js, Express, Firebase Cloud Messaging (FCM), Apple Push Notification service (APNs).",
+      database:
+        "Local SQLite with WatermelonDB offline-first reactive sync, cloud PostgreSQL database.",
+      security:
+        "Encrypted SecureStore / iOS Keychain, biometric FaceID / Fingerprint gating, TLS certificate pinning.",
+    },
+    keyFeatures: [
+      {
+        title: "Apple App Store & Google Play Store Verified",
+        description:
+          "Production builds vetted through rigorous review stages with zero policy violations and 100% first-pass release success.",
+      },
+      {
+        title: "60 FPS Fluid Reanimated Physics",
+        description:
+          "Smooth gesture-driven navigation and buttery transitions running directly on the native UI thread.",
+      },
+      {
+        title: "Offline-First Synchronization",
+        description:
+          "Full app operational capacity without active internet, auto-syncing optimistic updates whenever network restores.",
+      },
+      {
+        title: "Biometric Hardware Security",
+        description:
+          "Hardware-backed secure enclave integration for instant FaceID and fingerprint biometric unlock.",
+      },
+    ],
+    challengesAndSolutions: [
+      {
+        challenge:
+          "Meeting Apple's stringent App Store Review Guideline 4.8 (Sign in with Apple) and privacy manifest requirements.",
+        solution:
+          "Integrated native Apple Authentication bridges and automated privacy manifest generation in Expo build workflows, clearing review on initial submission.",
+      },
+      {
+        challenge:
+          "Eliminating frame drops during heavy list rendering and image caching on mid-range Android devices.",
+        solution:
+          "Adopted FlashList for ultra-fast list recycling and configured native memory-cached WebP image decoders.",
+      },
+    ],
+    techStack: [
+      "React Native",
+      "Expo EAS",
+      "iOS Swift Bridge",
+      "Android Kotlin",
+      "TypeScript",
+      "Tailwind CSS",
+      "SQLite",
+      "Firebase FCM",
+    ],
+    verifiedResults: [
+      "100% first-pass production approval rate on Apple App Store & Google Play Store.",
+      "Maintained constant 60 FPS scrolling benchmark across iOS and Android devices.",
+      "92% shared cross-platform code coverage reducing maintenance overhead.",
+    ],
+    prevSlug: "logistics-crm",
     nextSlug: "ecommerce-platform",
   },
   {
@@ -290,7 +377,7 @@ export const projectsData: Project[] = [
       "Delivered sub-100ms API response times for catalog search and category queries.",
       "Implemented rock-solid authentication flow with zero credential exposure.",
     ],
-    prevSlug: "logistics-crm",
+    prevSlug: "zenith-mobile",
     nextSlug: "gadgetsworld",
   },
   {

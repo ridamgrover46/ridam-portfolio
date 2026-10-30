@@ -1,122 +1,204 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
   <defs>
-    <linearGradient id="cv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080b12" />
-      <stop offset="100%" stop-color="#101826" />
+    <linearGradient id="fa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090d" />
+      <stop offset="50%" stop-color="#0e1018" />
+      <stop offset="100%" stop-color="#050608" />
     </linearGradient>
+
+    <linearGradient id="amber-vision" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+
+    <linearGradient id="card-fa" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#0b0e15" />
+    </linearGradient>
+
+    <filter id="fa-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f97316" flood-opacity="0.12" />
+    </filter>
+
+    <filter id="fa-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
-  <rect width="1200" height="750" fill="url(#cv-bg)" rx="16" />
-  <rect width="1200" height="750" fill="none" stroke="#1c2638" stroke-width="2" rx="16" />
+  <!-- Canvas Surface -->
+  <rect width="1200" height="750" fill="url(#fa-bg)" rx="16" />
+  <rect width="1198" height="748" x="1" y="1" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" rx="15" />
 
-  <!-- Top bar -->
-  <rect x="0" y="0" width="1200" height="48" fill="#0d131f" rx="16" />
-  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
-  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
-  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
-  <rect x="110" y="14" width="310" height="20" rx="6" fill="#182235" />
-  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">system.vision-auth.local / camera-feed / stream:0</text>
+  <!-- Window Header -->
+  <rect x="0" y="0" width="1200" height="46" fill="#090b12" rx="16" />
+  <circle cx="28" cy="23" r="5.5" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" opacity="0.85" />
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" opacity="0.85" />
 
-  <!-- Left: Live Computer Vision Stream simulation -->
-  <rect x="24" y="68" width="680" height="654" rx="12" fill="#06090e" stroke="#1c2638" stroke-width="1" />
-  
-  <!-- Video Feed overlay & grid -->
-  <text x="44" y="104" fill="#10b981" font-family="monospace" font-size="12">● LIVE FEED [30 FPS - 1080p RGB]</text>
-  <text x="560" y="104" fill="#94a3b8" font-family="monospace" font-size="12">OPENCV 4.8</text>
+  <rect x="100" y="11" width="380" height="24" rx="6" fill="#141824" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+  <circle cx="116" cy="23" r="3" fill="#10b981" />
+  <text x="128" y="27" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">
+    vision-auth.local / camera-feed / stream:0 / opencv-neural-pipeline
+  </text>
 
-  <!-- Detection Bounding Box -->
-  <rect x="180" y="140" width="360" height="420" rx="4" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="8 4" />
-  <circle cx="180" cy="140" r="4" fill="#10b981" />
-  <circle cx="540" cy="140" r="4" fill="#10b981" />
-  <circle cx="180" cy="560" r="4" fill="#10b981" />
-  <circle cx="540" cy="560" r="4" fill="#10b981" />
+  <!-- FPS & Model Metric -->
+  <rect x="1000" y="12" width="176" height="22" rx="11" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+  <circle cx="1014" cy="23" r="3.5" fill="#10b981" />
+  <text x="1026" y="27" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">
+    OPENCV 4.8 • 60 FPS • 99.4%
+  </text>
 
-  <!-- Facial landmark nodes -->
-  <!-- Eyes -->
-  <circle cx="310" cy="290" r="6" fill="#38bdf8" />
-  <circle cx="410" cy="290" r="6" fill="#38bdf8" />
-  <line x1="310" y1="290" x2="410" y2="290" stroke="#38bdf8" stroke-width="1" opacity="0.6" />
-  <!-- Nose bridge -->
-  <circle cx="360" cy="350" r="5" fill="#38bdf8" />
-  <line x1="360" y1="300" x2="360" y2="350" stroke="#38bdf8" stroke-width="1" opacity="0.6" />
-  <!-- Mouth contour -->
-  <circle cx="330" cy="420" r="5" fill="#38bdf8" />
-  <circle cx="360" cy="424" r="5" fill="#38bdf8" />
-  <circle cx="390" cy="420" r="5" fill="#38bdf8" />
-  <path d="M330 420 Q360 436 390 420" fill="none" stroke="#38bdf8" stroke-width="1.5" />
-  <!-- Jawline points -->
-  <circle cx="260" cy="360" r="4" fill="#38bdf8" opacity="0.5" />
-  <circle cx="460" cy="360" r="4" fill="#38bdf8" opacity="0.5" />
-  <circle cx="360" cy="490" r="4" fill="#38bdf8" opacity="0.5" />
+  <!-- Main Grid Content -->
+  <g transform="translate(24, 64)">
+    <!-- Left: Live Video Feed Canvas with Face Mesh -->
+    <g transform="translate(0, 0)" filter="url(#fa-shadow)">
+      <rect width="660" height="638" rx="14" fill="url(#card-fa)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
 
-  <!-- Detection Label tag -->
-  <rect x="180" y="112" width="220" height="26" rx="4" fill="#10b981" />
-  <text x="190" y="129" fill="#022c22" font-family="monospace" font-size="12" font-weight="700">MATCH: EMP_ID #1042 (98.6%)</text>
+      <text x="24" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Live Camera Stream: /dev/video0</text>
+      <text x="280" y="36" fill="#10b981" font-family="monospace" font-size="11" font-weight="700">● LIVE INFERENCE</text>
 
-  <!-- Live telemetry readout -->
-  <rect x="44" y="600" width="640" height="100" rx="8" fill="#0d1420" stroke="#1c2638" stroke-width="1" />
-  <text x="64" y="626" fill="#38bdf8" font-family="monospace" font-size="11">> Model: Haar Cascade + Deep Neural Embeddings (128-d vectors)</text>
-  <text x="64" y="648" fill="#94a3b8" font-family="monospace" font-size="11">> Euclidean Distance: 0.32 (Threshold: 0.55)</text>
-  <text x="64" y="670" fill="#34d399" font-family="monospace" font-size="11">> Verified Identity: Ridam Grover | Attendance Logged to SQLite</text>
+      <!-- Video Feed Screen Frame -->
+      <g transform="translate(20, 56)">
+        <rect width="620" height="560" rx="10" fill="#06080d" stroke="#f97316" stroke-opacity="0.3" stroke-width="1.5" />
 
-  <!-- Right: Attendance Log & Statistics -->
-  <rect x="724" y="68" width="452" height="654" rx="12" fill="#0a0e17" stroke="#1c2638" stroke-width="1" />
+        <!-- Camera HUD Reticle & Crosshairs -->
+        <line x1="20" y1="20" x2="60" y2="20" stroke="#f97316" stroke-width="2.5" />
+        <line x1="20" y1="20" x2="20" y2="60" stroke="#f97316" stroke-width="2.5" />
 
-  <text x="748" y="104" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Automated Attendance Log</text>
-  <text x="748" y="126" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Academic / Engineering Project • Python, OpenCV, NumPy</text>
+        <line x1="600" y1="20" x2="560" y2="20" stroke="#f97316" stroke-width="2.5" />
+        <line x1="600" y1="20" x2="600" y2="60" stroke="#f97316" stroke-width="2.5" />
 
-  <!-- Summary stats -->
-  <rect x="748" y="148" width="196" height="68" rx="8" fill="#121b2a" />
-  <text x="764" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">TODAY'S ATTENDEES</text>
-  <text x="764" y="200" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="800">42 / 45</text>
+        <line x1="20" y1="540" x2="60" y2="540" stroke="#f97316" stroke-width="2.5" />
+        <line x1="20" y1="540" x2="20" y2="500" stroke="#f97316" stroke-width="2.5" />
 
-  <rect x="960" y="148" width="192" height="68" rx="8" fill="#121b2a" />
-  <text x="776" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">ACCURACY RATE</text>
-  <text x="976" y="200" fill="#10b981" font-family="system-ui, sans-serif" font-size="22" font-weight="800">99.2%</text>
+        <line x1="600" y1="540" x2="560" y2="540" stroke="#f97316" stroke-width="2.5" />
+        <line x1="600" y1="540" x2="600" y2="500" stroke="#f97316" stroke-width="2.5" />
 
-  <!-- Recent Logs -->
-  <text x="748" y="246" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Real-Time Verification Stream</text>
+        <!-- Central Biometric Face Scanning Mesh -->
+        <g transform="translate(170, 90)">
+          <!-- Face Silhouette Outline -->
+          <ellipse cx="140" cy="180" rx="110" ry="140" fill="#121624" fill-opacity="0.6" stroke="#f97316" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="6 4" />
 
-  <!-- Log item 1 -->
-  <rect x="748" y="262" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
-  <circle cx="774" cy="292" r="14" fill="#064e3b" />
-  <text x="768" y="297" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
-  <text x="800" y="284" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Ridam Grover (#1042)</text>
-  <text x="800" y="304" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 09:02:14 AM • Confidence: 98.6%</text>
+          <!-- Face Bounding Box with Corner Brackets -->
+          <rect x="10" y="20" width="260" height="320" rx="8" fill="none" stroke="#f97316" stroke-width="2" />
+          <rect x="10" y="20" width="260" height="28" fill="#f97316" fill-opacity="0.15" />
+          <text x="22" y="38" fill="#fdba74" font-family="monospace" font-size="11" font-weight="700">TARGET: RIDAM GROVER (ID: #0821)</text>
 
-  <!-- Log item 2 -->
-  <rect x="748" y="334" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
-  <circle cx="774" cy="364" r="14" fill="#064e3b" />
-  <text x="768" y="369" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
-  <text x="800" y="356" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Aarav Sharma (#1029)</text>
-  <text x="800" y="376" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 08:58:40 AM • Confidence: 97.4%</text>
+          <!-- 68-Point Facial Landmarks Simulation (Amber glowing dots) -->
+          <!-- Eye Level -->
+          <circle cx="85" cy="140" r="4" fill="#f97316" filter="url(#fa-glow)" />
+          <circle cx="105" cy="140" r="3" fill="#fbbf24" />
+          <circle cx="175" cy="140" r="3" fill="#fbbf24" />
+          <circle cx="195" cy="140" r="4" fill="#f97316" filter="url(#fa-glow)" />
 
-  <!-- Log item 3 -->
-  <rect x="748" y="406" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
-  <circle cx="774" cy="436" r="14" fill="#064e3b" />
-  <text x="768" y="441" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
-  <text x="800" y="428" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Neha Verma (#1033)</text>
-  <text x="800" y="448" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 08:54:12 AM • Confidence: 99.1%</text>
+          <!-- Eyebrows -->
+          <line x1="70" y1="120" x2="115" y2="122" stroke="#f97316" stroke-width="2" />
+          <line x1="165" y1="122" x2="210" y2="120" stroke="#f97316" stroke-width="2" />
 
-  <!-- Pipeline Diagram block -->
-  <rect x="748" y="484" width="404" height="216" rx="8" fill="#0c121d" stroke="#1a2436" stroke-width="1" />
-  <text x="768" y="512" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">PROCESSING PIPELINE</text>
-  
-  <rect x="768" y="528" width="100" height="38" rx="6" fill="#162235" />
-  <text x="782" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Frame Capture</text>
+          <!-- Nose Bridge & Tip -->
+          <line x1="140" y1="130" x2="140" y2="195" stroke="#f97316" stroke-width="2" stroke-dasharray="4 2" />
+          <circle cx="140" cy="195" r="4" fill="#fbbf24" />
+          <circle cx="120" cy="205" r="3" fill="#f97316" />
+          <circle cx="160" cy="205" r="3" fill="#f97316" />
 
-  <text x="874" y="552" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14">→</text>
+          <!-- Mouth & Lips -->
+          <ellipse cx="140" cy="245" rx="35" ry="14" fill="none" stroke="#f97316" stroke-width="2" />
+          <circle cx="105" cy="245" r="3" fill="#fbbf24" />
+          <circle cx="175" cy="245" r="3" fill="#fbbf24" />
 
-  <rect x="894" y="528" width="110" height="38" rx="6" fill="#162235" />
-  <text x="906" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Haar Detection</text>
+          <!-- Jawline Contours -->
+          <path d="M 40,160 Q 60,280 140,320 Q 220,280 240,160" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5 3" />
 
-  <text x="1010" y="552" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14">→</text>
+          <!-- Distance & Alignment Vector Line -->
+          <line x1="140" y1="20" x2="140" y2="340" stroke="#10b981" stroke-width="1" stroke-dasharray="8 4" opacity="0.6" />
 
-  <rect x="1030" y="528" width="104" height="38" rx="6" fill="#162235" />
-  <text x="1042" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Vector Embed</text>
+          <!-- Confidence Badge Bottom of Box -->
+          <rect x="25" y="300" width="230" height="26" rx="6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1" />
+          <text x="36" y="317" fill="#6ee7b7" font-family="monospace" font-size="11" font-weight="700">CONFIDENCE: 99.4% • LIVENESS: PASS</text>
+        </g>
 
-  <!-- Lower row -->
-  <text x="768" y="600" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Database Logging:</text>
-  <text x="768" y="624" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Auto-generates daily CSV reports &amp; records timestamped entries into local SQLite with anti-spoofing heuristic verification.</text>
+        <!-- Bottom Telemetry HUD Bar -->
+        <g transform="translate(20, 500)">
+          <rect width="580" height="42" rx="8" fill="#0d111b" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+          <text x="18" y="26" fill="#94a3b8" font-family="monospace" font-size="11">Input: 1920x1080@60fps • Haar Cascade + FaceNet 128D Embedding • Latency: 16ms</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right: Automated SQLite Ledger & Verification Records -->
+    <g transform="translate(684, 0)" filter="url(#fa-shadow)">
+      <rect width="468" height="638" rx="14" fill="url(#card-fa)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
+
+      <text x="24" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Biometric Attendance Ledger</text>
+      <text x="240" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">SQLite Database Active</text>
+
+      <!-- Ledger Summary Stats -->
+      <g transform="translate(20, 56)">
+        <rect width="428" height="80" rx="10" fill="#0e111a" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+        <g transform="translate(18, 20)">
+          <text x="0" y="16" fill="#64748b" font-family="monospace" font-size="10.5">TODAY VERIFIED</text>
+          <text x="0" y="44" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">482 / 500</text>
+        </g>
+        <g transform="translate(160, 20)">
+          <text x="0" y="16" fill="#64748b" font-family="monospace" font-size="10.5">FALSE ACCEPTANCE</text>
+          <text x="0" y="44" fill="#10b981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">&lt; 0.001%</text>
+        </g>
+        <g transform="translate(300, 20)">
+          <text x="0" y="16" fill="#64748b" font-family="monospace" font-size="10.5">AVG VERIFY TIME</text>
+          <text x="0" y="44" fill="#f97316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800">142 ms</text>
+        </g>
+      </g>
+
+      <!-- Ledger Row 1 (Recent Checked In) -->
+      <g transform="translate(20, 150)">
+        <rect width="428" height="96" rx="10" fill="#0f1422" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+        <circle cx="30" cy="30" r="14" fill="#10b981" fill-opacity="0.2" />
+        <text x="24" y="35" fill="#10b981" font-family="sans-serif" font-size="14" font-weight="700">✓</text>
+        <text x="56" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Ridam Grover</text>
+        <text x="56" y="46" fill="#94a3b8" font-family="monospace" font-size="10.5">ID: #0821 • Engineering Dept</text>
+        <rect x="310" y="16" width="102" height="22" rx="4" fill="#10b981" fill-opacity="0.15" />
+        <text x="320" y="31" fill="#6ee7b7" font-family="monospace" font-size="10" font-weight="700">09:02:14 AM</text>
+        <text x="18" y="76" fill="#64748b" font-family="monospace" font-size="10">Embedding Euclidean Dist: 0.28 (Threshold: 0.60) • Verified</text>
+      </g>
+
+      <!-- Ledger Row 2 -->
+      <g transform="translate(20, 260)">
+        <rect width="428" height="96" rx="10" fill="#0f1422" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+        <circle cx="30" cy="30" r="14" fill="#ffffff" fill-opacity="0.05" />
+        <text x="24" y="35" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="700">✓</text>
+        <text x="56" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Aarav Patel</text>
+        <text x="56" y="46" fill="#94a3b8" font-family="monospace" font-size="10.5">ID: #0819 • Cloud Architecture</text>
+        <rect x="310" y="16" width="102" height="22" rx="4" fill="#ffffff" fill-opacity="0.08" />
+        <text x="320" y="31" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">08:58:32 AM</text>
+        <text x="18" y="76" fill="#64748b" font-family="monospace" font-size="10">Embedding Euclidean Dist: 0.31 (Threshold: 0.60) • Verified</text>
+      </g>
+
+      <!-- Ledger Row 3 -->
+      <g transform="translate(20, 370)">
+        <rect width="428" height="96" rx="10" fill="#0f1422" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+        <circle cx="30" cy="30" r="14" fill="#ffffff" fill-opacity="0.05" />
+        <text x="24" y="35" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="700">✓</text>
+        <text x="56" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Kavya Sharma</text>
+        <text x="56" y="46" fill="#94a3b8" font-family="monospace" font-size="10.5">ID: #0794 • Mobile QA &amp; Dev</text>
+        <rect x="310" y="16" width="102" height="22" rx="4" fill="#ffffff" fill-opacity="0.08" />
+        <text x="320" y="31" fill="#cbd5e1" font-family="monospace" font-size="10" font-weight="700">08:54:19 AM</text>
+        <text x="18" y="76" fill="#64748b" font-family="monospace" font-size="10">Embedding Euclidean Dist: 0.24 (Threshold: 0.60) • Verified</text>
+      </g>
+
+      <!-- Bottom Export & Integrity -->
+      <g transform="translate(20, 484)">
+        <rect width="428" height="130" rx="10" fill="#131724" stroke="#f97316" stroke-opacity="0.25" stroke-width="1" />
+        <text x="20" y="28" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">Automated Audit &amp; CSV Export</text>
+        <text x="20" y="52" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Daily logs encrypted and exported automatically with timestamp hash.</text>
+
+        <rect x="20" y="72" width="180" height="36" rx="8" fill="#f97316" />
+        <text x="44" y="94" fill="#0c0e16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800">EXPORT DAILY CSV</text>
+
+        <rect x="214" y="72" width="194" height="36" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+        <text x="240" y="94" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">ENROLL NEW FACE</text>
+      </g>
+    </g>
+  </g>
 </svg>
-

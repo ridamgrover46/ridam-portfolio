@@ -15,6 +15,12 @@ import {
   Lock,
   X,
   Layers,
+  Play,
+  Pause,
+  Volume2,
+  Smartphone,
+  ShieldCheck,
+  Check,
 } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -26,17 +32,19 @@ export const GALLERY_PROJECTS = [
     slug: "radiotangy",
     name: "RadioTangy Audio Stories",
     category: "AUDIO & MEDIA STREAMING",
+    filterType: "fullstack",
     subtitle: "High-fidelity episodic audio platform with waveform seeking & protected access",
     copy: "Production audio storytelling platform engineered with Next.js App Router, Supabase, and PostgreSQL, featuring season/episode hierarchies, persistent playback engine, and protected media delivery.",
-    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "HTML5 Web Audio"],
     image: "/images/projects/radiotangy.svg",
     url: "radiotangy.com/series/whispers",
-    themeColor: "rgba(129, 140, 248, 0.4)",
+    themeColor: "rgba(249, 115, 22, 0.4)",
+    isAudioDemo: true,
     highlights: [
       "Persistent Audio Playback Engine",
-      "Signed Media Access Tokens",
+      "Signed Media Access Tokens & RLS",
       "Hierarchical Season & Episode Navigation",
-      "Supabase PostgreSQL RLS Policies",
+      "Lossless 320kbps Spatial Audio Buffer",
     ],
   },
   {
@@ -44,30 +52,55 @@ export const GALLERY_PROJECTS = [
     slug: "logistics-crm",
     name: "Logistics CRM & Freight Suite",
     category: "SUPPLY CHAIN & DISPATCH",
+    filterType: "fullstack",
     subtitle: "Real-time dispatch telemetry, carrier compliance & load tracking",
     copy: "Centralized operational CRM for freight brokerages managing carrier onboarding, live dispatch boards, broker teams, and third-party VoIP and email integrations.",
     tags: ["Next.js", "Node.js", "PostgreSQL", "REST APIs", "Tailwind CSS"],
     image: "/images/projects/logistics-crm.svg",
     url: "freight-crm.app/dispatch/live-board",
-    themeColor: "rgba(16, 185, 129, 0.4)",
+    themeColor: "rgba(249, 115, 22, 0.4)",
     highlights: [
-      "Active Load Dispatch Board",
-      "Carrier Compliance & Driver Verification",
-      "RingCentral VoIP Pipeline (In Dev)",
+      "Active Load Dispatch Telemetry Board",
+      "Carrier Compliance & FMCSA Verification",
+      "RingCentral VoIP Direct-Dial Pipeline",
       "Role-Based Access Control (RBAC)",
     ],
   },
   {
     id: "03",
+    slug: "zenith-mobile",
+    name: "Zenith Mobile Suite (iOS & Android)",
+    category: "CROSS-PLATFORM MOBILE APPS",
+    filterType: "mobile",
+    subtitle: "Native iOS & Android mobile ecosystem with 100% App Store & Google Play approval",
+    copy: "Cross-platform mobile apps engineered with React Native and Expo, featuring biometric FaceID unlock, offline SQLite caching, 60 FPS Reanimated animations, and zero-rejection first-pass store approvals.",
+    tags: ["React Native", "Expo EAS", "iOS Swift", "Android Kotlin", "SQLite"],
+    image: "/images/projects/mobile-apps.svg",
+    url: "zenith-mobile.app/v3.4.0",
+    themeColor: "rgba(249, 115, 22, 0.4)",
+    storeBadges: [
+      { label: "Apple App Store Verified", sub: "100% First-Pass Human Review", icon: "apple" },
+      { label: "Google Play Console Approved", sub: "Production Release Track", icon: "play" },
+    ],
+    highlights: [
+      "100% First-Pass App Store & Play Store Approval",
+      "60 FPS Native Reanimated Physics & Gesture Engine",
+      "Biometric FaceID & Secure Enclave Credential Vault",
+      "Offline-First SQLite Cache with Optimistic Synchronization",
+    ],
+  },
+  {
+    id: "04",
     slug: "ecommerce-platform",
     name: "Nexus E-Commerce Platform",
     category: "RETAIL & COMMERCE",
+    filterType: "fullstack",
     subtitle: "Headless MERN shopping architecture with Google OAuth & JWT",
     copy: "Modern full-stack shopping portal with dynamic category filtering, persistent cart state, Google OAuth 2.0 authentication, and merchant admin inventory management.",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Ant Design"],
     image: "/images/projects/ecommerce.svg",
     url: "store.nexus-commerce.app/catalog",
-    themeColor: "rgba(244, 63, 94, 0.4)",
+    themeColor: "rgba(249, 115, 22, 0.4)",
     highlights: [
       "Dual Auth: Google OAuth 2.0 & JWT",
       "Dynamic Multi-Attribute Filter Matrix",
@@ -76,34 +109,36 @@ export const GALLERY_PROJECTS = [
     ],
   },
   {
-    id: "04",
+    id: "05",
     slug: "gadgetsworld",
     name: "GadgetsWorld Spec Engine",
     category: "HARDWARE & BENCHMARKS",
+    filterType: "systems",
     subtitle: "Consumer electronics discovery & side-by-side spec comparison matrix",
     copy: "Snappy consumer tech discovery web app built with React and Tailwind CSS, offering instant hardware spec benchmarking, dynamic search, and responsive filtering.",
     tags: ["React.js", "Tailwind CSS", "Context API", "Responsive UI"],
     image: "/images/projects/gadgetsworld.svg",
     url: "gadgetsworld.dev/compare/flagships",
-    themeColor: "rgba(56, 189, 248, 0.4)",
+    themeColor: "rgba(249, 115, 22, 0.4)",
     highlights: [
-      "Side-by-Side Spec Matrix",
+      "Side-by-Side Benchmark Spec Matrix",
       "Real-Time Instant Search Filter",
       "Adaptive Mobile Table Pivoting",
       "Zero-Latency Client Calculations",
     ],
   },
   {
-    id: "05",
+    id: "06",
     slug: "face-attendance",
     name: "Face Recognition Attendance",
     category: "COMPUTER VISION & AI",
+    filterType: "systems",
     subtitle: "Automated biometric attendance platform using Python & OpenCV",
     copy: "Automated biometric attendance tracking system using Python, OpenCV, and NumPy that detects facial features via webcam feed, verifies identities, and logs timestamped records.",
     tags: ["Python", "OpenCV", "NumPy", "SQLite", "Computer Vision"],
     image: "/images/projects/face-attendance.svg",
     url: "vision-auth.local/camera-feed/stream:0",
-    themeColor: "rgba(168, 85, 247, 0.4)",
+    themeColor: "rgba(249, 115, 22, 0.4)",
     highlights: [
       "Real-Time Facial Landmark Tracking",
       "128-Dimensional Deep Embeddings",
@@ -113,13 +148,110 @@ export const GALLERY_PROJECTS = [
   },
 ];
 
+const FILTER_TABS = [
+  { id: "all", label: "All Work", count: 6 },
+  { id: "fullstack", label: "Full-Stack Web", count: 3 },
+  { id: "mobile", label: "Mobile Apps (iOS & Android)", count: 1 },
+  { id: "systems", label: "Systems & AI", count: 2 },
+];
+
 export function ProjectsSection() {
   const root = useRef<HTMLDivElement>(null);
+  const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<
     (typeof GALLERY_PROJECTS)[number] | null
   >(null);
   const isDraggingRef = useRef(false);
   const startPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  // Interactive Audio Waveform Simulation State
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [audioElapsed, setAudioElapsed] = useState(84); // 01:24 in seconds
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const oscNodesRef = useRef<OscillatorNode[]>([]);
+
+  // Toggle ambient audio waveform demo
+  const toggleAudioDemo = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    soundManager.playClick();
+
+    if (isPlayingAudio) {
+      // Stop
+      try {
+        oscNodesRef.current.forEach((node) => node.stop());
+        oscNodesRef.current = [];
+        if (audioCtxRef.current) {
+          audioCtxRef.current.close();
+          audioCtxRef.current = null;
+        }
+      } catch {
+        // Safe fallback
+      }
+      setIsPlayingAudio(false);
+    } else {
+      // Start calm harmonic synthesizer simulation
+      try {
+        const AudioContextClass =
+          window.AudioContext ||
+          (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        const ctx = new AudioContextClass();
+        audioCtxRef.current = ctx;
+
+        const masterGain = ctx.createGain();
+        masterGain.gain.setValueAtTime(0.04, ctx.currentTime);
+        masterGain.connect(ctx.destination);
+
+        // Low ambient chord: 220Hz (A3), 330Hz (E4)
+        const osc1 = ctx.createOscillator();
+        osc1.type = "sine";
+        osc1.frequency.setValueAtTime(220, ctx.currentTime);
+        osc1.connect(masterGain);
+        osc1.start();
+
+        const osc2 = ctx.createOscillator();
+        osc2.type = "triangle";
+        osc2.frequency.setValueAtTime(329.63, ctx.currentTime);
+        osc2.connect(masterGain);
+        osc2.start();
+
+        oscNodesRef.current = [osc1, osc2];
+      } catch {
+        // AudioContext not available or blocked
+      }
+      setIsPlayingAudio(true);
+    }
+  };
+
+  // Timer increment while playing
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isPlayingAudio) {
+      interval = setInterval(() => {
+        setAudioElapsed((prev) => (prev >= 255 ? 84 : prev + 1));
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isPlayingAudio]);
+
+  // Clean up audio on unmount
+  useEffect(() => {
+    return () => {
+      try {
+        oscNodesRef.current.forEach((n) => n.stop());
+        if (audioCtxRef.current) {
+          audioCtxRef.current.close();
+        }
+      } catch {
+        // Ignore cleanup error
+      }
+    };
+  }, []);
+
+  const formatAudioTime = (sec: number) => {
+    const mins = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${mins.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -152,9 +284,9 @@ export function ProjectsSection() {
         },
       });
 
-      // Background word drift with subtle 3D parallax
+      // Background word drift with subtle parallax
       gsap.to(".gallery-word", {
-        xPercent: -25,
+        xPercent: -22,
         ease: "none",
         scrollTrigger: {
           trigger: root.current,
@@ -164,7 +296,7 @@ export function ProjectsSection() {
         },
       });
 
-      // Dynamic multi-stage background color & ambient aura shifts linked to scroll progress!
+      // Ambient atmosphere lighting: gentle shifts in warm amber, dark bronze, and obsidian
       if (bgLayer) {
         const bgTl = gsap.timeline({
           scrollTrigger: {
@@ -175,22 +307,20 @@ export function ProjectsSection() {
           },
         });
 
-        // Stage 1 (0%): Deep Blue -> Stage 2 (25%): Emerald/Teal -> Stage 3 (50%): Deep Violet -> Stage 4 (75%): Rose/Crimson -> Stage 5 (100%): Sapphire/Cyan
         bgTl
           .to(bgLayer, {
-            background: "linear-gradient(135deg, #041416 0%, #062b29 45%, #030712 100%)",
+            background:
+              "radial-gradient(ellipse at 50% 25%, rgba(249, 115, 22, 0.08) 0%, rgba(6, 7, 9, 0.96) 65%, #060709 100%)",
             duration: 1,
           })
           .to(bgLayer, {
-            background: "linear-gradient(135deg, #0e071e 0%, #1c0d3a 45%, #030712 100%)",
+            background:
+              "radial-gradient(ellipse at 50% 25%, rgba(217, 119, 6, 0.08) 0%, rgba(6, 7, 9, 0.96) 65%, #060709 100%)",
             duration: 1,
           })
           .to(bgLayer, {
-            background: "linear-gradient(135deg, #180812 0%, #2e0d1d 45%, #030712 100%)",
-            duration: 1,
-          })
-          .to(bgLayer, {
-            background: "linear-gradient(135deg, #041021 0%, #0a2540 45%, #030712 100%)",
+            background:
+              "radial-gradient(ellipse at 50% 25%, rgba(245, 158, 11, 0.07) 0%, rgba(6, 7, 9, 0.96) 65%, #060709 100%)",
             duration: 1,
           });
       }
@@ -209,8 +339,8 @@ export function ProjectsSection() {
           .to(
             glowPrimary,
             {
-              xPercent: 30,
-              background: "radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%)",
+              xPercent: 40,
+              background: "radial-gradient(circle, rgba(249, 115, 22, 0.14), transparent 70%)",
               duration: 1,
             },
             0
@@ -218,8 +348,8 @@ export function ProjectsSection() {
           .to(
             glowSecondary,
             {
-              xPercent: -30,
-              background: "radial-gradient(circle, rgba(6, 182, 212, 0.35), transparent 70%)",
+              xPercent: -40,
+              background: "radial-gradient(circle, rgba(217, 119, 6, 0.10), transparent 70%)",
               duration: 1,
             },
             0
@@ -227,8 +357,8 @@ export function ProjectsSection() {
           .to(
             glowPrimary,
             {
-              xPercent: 60,
-              background: "radial-gradient(circle, rgba(168, 85, 247, 0.45), transparent 70%)",
+              xPercent: 80,
+              background: "radial-gradient(circle, rgba(245, 158, 11, 0.12), transparent 70%)",
               duration: 1,
             },
             1
@@ -236,57 +366,21 @@ export function ProjectsSection() {
           .to(
             glowSecondary,
             {
-              xPercent: -60,
-              background: "radial-gradient(circle, rgba(99, 102, 241, 0.35), transparent 70%)",
+              xPercent: -80,
+              background: "radial-gradient(circle, rgba(234, 88, 12, 0.09), transparent 70%)",
               duration: 1,
             },
             1
-          )
-          .to(
-            glowPrimary,
-            {
-              xPercent: 90,
-              background: "radial-gradient(circle, rgba(244, 63, 94, 0.4), transparent 70%)",
-              duration: 1,
-            },
-            2
-          )
-          .to(
-            glowSecondary,
-            {
-              xPercent: -90,
-              background: "radial-gradient(circle, rgba(245, 158, 11, 0.35), transparent 70%)",
-              duration: 1,
-            },
-            2
-          )
-          .to(
-            glowPrimary,
-            {
-              xPercent: 120,
-              background: "radial-gradient(circle, rgba(14, 165, 233, 0.45), transparent 70%)",
-              duration: 1,
-            },
-            3
-          )
-          .to(
-            glowSecondary,
-            {
-              xPercent: -120,
-              background: "radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%)",
-              duration: 1,
-            },
-            3
           );
       }
 
-      // Each card scales/rotates into focus at center, tilts away after
+      // Card scale & 3D tilt effects
       cards.forEach((card) => {
         const st = { trigger: card, containerAnimation: move, scrub: true };
 
         gsap.fromTo(
           card,
-          { scale: 0.88, rotateY: -14, autoAlpha: 0.65 },
+          { scale: 0.9, rotateY: -12, autoAlpha: 0.7 },
           {
             scale: 1,
             rotateY: 0,
@@ -297,16 +391,16 @@ export function ProjectsSection() {
         );
 
         gsap.to(card, {
-          scale: 0.9,
-          rotateY: 14,
-          autoAlpha: 0.7,
+          scale: 0.92,
+          rotateY: 12,
+          autoAlpha: 0.75,
           ease: "none",
           immediateRender: false,
           scrollTrigger: { ...st, start: "center center", end: "right left" },
         });
       });
 
-      // Recalculate once images finish loading
+      // Refresh ScrollTrigger once images finish loading
       const imgs = root.current.querySelectorAll("img");
       imgs.forEach((img) => {
         if (!img.complete) {
@@ -329,31 +423,71 @@ export function ProjectsSection() {
         aria-label="Selected work"
       >
         <div className="gallery-pin">
-          {/* Dynamic Shifting Full Background Layer */}
+          {/* Dynamic Shifting Dark Obsidian Background Layer */}
           <div className="gallery-bg-layer" aria-hidden="true" />
 
-          {/* Dynamic Shifting Ambient Atmosphere Orbs */}
+          {/* Warm Amber & Gold Ambient Atmosphere Orbs */}
           <span className="gallery-glow-primary" aria-hidden="true" />
           <span className="gallery-glow-secondary" aria-hidden="true" />
 
-          {/* Section Eyebrow & Intro */}
+          {/* Section Eyebrow & Intro Header */}
           <div className="gallery-intro">
-            <div className="eyebrow inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-sky-400 font-mono text-xs tracking-[0.2em] uppercase backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5 text-sky-400" />
-              <span>02 / SELECTED WORK</span>
+            <div className="eyebrow inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-3.5 py-1 text-orange-400 font-mono text-xs tracking-[0.2em] uppercase backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5 text-orange-400" />
+              <span>02 / SELECTED WORK &amp; CASE STUDIES</span>
             </div>
+
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mt-2.5">
-              <p className="text-xl font-extrabold tracking-tight text-white sm:text-2xl lg:text-3xl max-w-2xl drop-shadow-sm">
-                Products engineered for scale and daily enterprise operations.
-              </p>
+              <div>
+                <p className="text-xl font-bold tracking-tight text-white sm:text-2xl lg:text-3xl max-w-2xl drop-shadow-sm font-sans">
+                  Production software engineered for founders, scale, and daily operations.
+                </p>
+                <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-xl font-sans">
+                  Full-stack Next.js web applications, cross-platform mobile apps with verified App Store approvals, and secure architectures.
+                </p>
+              </div>
+
               <Link
                 href="/work"
                 onClick={() => soundManager.playClick()}
-                className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-sky-400 hover:text-sky-300 font-semibold"
+                className="inline-flex items-center gap-2 text-xs font-mono text-orange-400 hover:text-orange-300 font-semibold transition-colors shrink-0"
               >
                 <span>View all case studies</span>
                 <ArrowRight className="size-3.5" />
               </Link>
+            </div>
+
+            {/* Quick Filter Segmented Pills */}
+            <div className="mt-4 flex flex-wrap items-center gap-2 pt-1 border-t border-white/[0.06]">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mr-1 hidden sm:inline">
+                Filter:
+              </span>
+              {FILTER_TABS.map((tab) => {
+                const isActive = activeFilter === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      soundManager.playClick();
+                      setActiveFilter(tab.id);
+                    }}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[11px] transition-all cursor-pointer ${
+                      isActive
+                        ? "bg-orange-500 text-slate-950 font-bold shadow-lg shadow-orange-500/25"
+                        : "border border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    <span
+                      className={`text-[9px] px-1.5 py-0.2 rounded-full font-bold ${
+                        isActive ? "bg-slate-950/20 text-slate-950" : "bg-white/10 text-zinc-400"
+                      }`}
+                    >
+                      {tab.count}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -364,112 +498,200 @@ export function ProjectsSection() {
 
           {/* Horizontal Pinned Track & 3D Cards */}
           <div className="gallery-stage">
-            {GALLERY_PROJECTS.map((p, i) => (
-              <figure
-                className="gallery-card group cursor-pointer"
-                key={p.name}
-                onPointerDown={(e) => {
-                  startPosRef.current = { x: e.clientX, y: e.clientY };
-                  isDraggingRef.current = false;
-                }}
-                onPointerMove={(e) => {
-                  if (
-                    Math.hypot(
-                      e.clientX - startPosRef.current.x,
-                      e.clientY - startPosRef.current.y
-                    ) > 8
-                  ) {
-                    isDraggingRef.current = true;
-                  }
-                }}
-                onClick={() => {
-                  if (!isDraggingRef.current) {
-                    soundManager.playClick();
-                    setSelectedProject(p);
-                  }
-                }}
-              >
-                {/* Browser Glass Bar with traffic lights & simulated URL */}
-                <div className="flex items-center justify-between border-b border-white/10 bg-[#080d19]/95 px-4 py-2.5 backdrop-blur-md">
-                  <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-rose-500/90 shadow-sm shadow-rose-500/50" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-500/90 shadow-sm shadow-amber-500/50" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/90 shadow-sm shadow-emerald-500/50" />
-                    <div className="ml-2 flex items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 font-mono text-[10px] text-slate-300">
-                      <Lock className="h-2.5 w-2.5 text-emerald-400" />
-                      <span className="truncate max-w-[200px] sm:max-w-[280px]">
-                        {p.url}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-sky-400 font-bold bg-sky-500/10 px-2.5 py-0.5 rounded-full border border-sky-500/20">
-                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-pulse" />
-                      LIVE PROJ 0{i + 1}
-                    </span>
-                  </div>
-                </div>
+            {GALLERY_PROJECTS.map((p, i) => {
+              const matchesFilter =
+                activeFilter === "all" ||
+                activeFilter === p.filterType ||
+                (activeFilter === "fullstack" && p.filterType === "fullstack") ||
+                (activeFilter === "mobile" && p.filterType === "mobile") ||
+                (activeFilter === "systems" && p.filterType === "systems");
 
-                {/* High-Resolution Crystal Clear Project Media */}
-                <div className="gallery-media relative overflow-hidden bg-slate-950 aspect-[16/10]">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    width={1280}
-                    height={800}
-                    priority={i < 2}
-                    className="h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                  {/* Subtle interactive hover highlight */}
-                  <div className="pointer-events-none absolute inset-0 bg-sky-500/0 transition-colors duration-300 group-hover:bg-sky-500/5" />
-                </div>
-
-                {/* Dedicated Project Caption Bar */}
-                <figcaption className="gallery-caption border-t border-white/10 bg-[#090e1a]/95 px-5 py-4 backdrop-blur-xl">
-                  <div className="flex-1 min-w-0 pr-4">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] font-bold tracking-widest text-sky-400 uppercase">
-                        0{i + 1} / 0{GALLERY_PROJECTS.length}
-                      </span>
-                      <span className="text-white/20">•</span>
-                      <span className="font-mono text-[9px] font-semibold text-slate-400 uppercase tracking-wider truncate">
-                        {p.category}
-                      </span>
-                    </div>
-                    <h3 className="mt-1 text-base sm:text-lg font-bold text-white tracking-tight truncate group-hover:text-sky-300 transition-colors">
-                      {p.name}
-                    </h3>
-                    <p className="mt-0.5 line-clamp-1 text-xs text-slate-400">
-                      {p.subtitle}
-                    </p>
-
-                    {/* Tech Pills */}
-                    <div className="mt-2.5 flex flex-wrap gap-1.5">
-                      {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[9px] text-sky-200/90"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button
-                    className="gallery-btn self-center transition-all duration-300 group-hover:scale-110 group-hover:bg-sky-500 group-hover:border-sky-400 group-hover:shadow-sky-500/40 shadow-lg"
-                    aria-label={`View ${p.name}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
+              return (
+                <figure
+                  className={`gallery-card group cursor-pointer transition-all duration-500 ${
+                    !matchesFilter ? "opacity-35 scale-95 grayscale" : "opacity-100"
+                  }`}
+                  key={p.name}
+                  onPointerDown={(e) => {
+                    startPosRef.current = { x: e.clientX, y: e.clientY };
+                    isDraggingRef.current = false;
+                  }}
+                  onPointerMove={(e) => {
+                    if (
+                      Math.hypot(
+                        e.clientX - startPosRef.current.x,
+                        e.clientY - startPosRef.current.y
+                      ) > 8
+                    ) {
+                      isDraggingRef.current = true;
+                    }
+                  }}
+                  onClick={() => {
+                    if (!isDraggingRef.current) {
                       soundManager.playClick();
                       setSelectedProject(p);
-                    }}
-                  >
-                    <ArrowUpRight className="h-5 w-5" />
-                  </button>
-                </figcaption>
-              </figure>
-            ))}
+                    }
+                  }}
+                >
+                  {/* Browser Glass Bar with traffic lights & simulated URL */}
+                  <div className="flex items-center justify-between border-b border-white/10 bg-[#0c0e16]/95 px-4 py-2.5 backdrop-blur-md">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2.5 w-2.5 rounded-full bg-rose-500/90 shadow-sm shadow-rose-500/50" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-amber-500/90 shadow-sm shadow-amber-500/50" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/90 shadow-sm shadow-emerald-500/50" />
+                      <div className="ml-2 flex items-center gap-1.5 rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 font-mono text-[10px] text-zinc-300">
+                        <Lock className="h-2.5 w-2.5 text-orange-400" />
+                        <span className="truncate max-w-[180px] sm:max-w-[260px]">
+                          {p.url}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-orange-400 font-bold bg-orange-500/10 px-2.5 py-0.5 rounded-full border border-orange-500/20">
+                        <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-pulse" />
+                        LIVE 0{i + 1}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* High-Resolution Project Media View */}
+                  <div className="gallery-media relative overflow-hidden bg-slate-950 aspect-[16/10]">
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      width={1280}
+                      height={800}
+                      priority={i < 2}
+                      className="h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+
+                    {/* Subtle interactive hover highlight */}
+                    <div className="pointer-events-none absolute inset-0 bg-orange-500/0 transition-colors duration-300 group-hover:bg-orange-500/[0.04]" />
+
+                    {/* Official App Store & Google Play Badges Floating Overlay for Mobile App Project */}
+                    {p.storeBadges && (
+                      <div className="absolute top-3 right-3 flex flex-col gap-1.5 z-10">
+                        <div className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-white shadow-xl backdrop-blur-md">
+                          <Smartphone className="size-3 text-white" />
+                          <span> App Store Verified</span>
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-emerald-300 shadow-xl backdrop-blur-md">
+                          <ShieldCheck className="size-3 text-emerald-400" />
+                          <span>▶ Google Play Approved</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Interactive Audio Waveform Simulation Overlay on RadioTangy Card */}
+                    {p.isAudioDemo && (
+                      <div className="absolute bottom-3 inset-x-3 rounded-xl border border-orange-500/30 bg-[#090b12]/92 p-2.5 backdrop-blur-xl shadow-2xl flex items-center justify-between gap-3 z-10">
+                        {/* Play / Pause Toggle Button */}
+                        <button
+                          type="button"
+                          onClick={toggleAudioDemo}
+                          className="flex items-center justify-center size-9 rounded-lg bg-orange-500 text-slate-950 hover:bg-orange-400 transition-transform active:scale-90 shadow-md shadow-orange-500/30 shrink-0 cursor-pointer"
+                          aria-label={isPlayingAudio ? "Pause Audio Preview" : "Play Audio Preview"}
+                        >
+                          {isPlayingAudio ? (
+                            <Pause className="size-4 fill-current" />
+                          ) : (
+                            <Play className="size-4 fill-current ml-0.5" />
+                          )}
+                        </button>
+
+                        {/* Animated Waveform Visualizer Bars */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between text-[10px] font-mono mb-1">
+                            <span className="text-white font-bold truncate">
+                              Ep 4: The Midnight Signal
+                            </span>
+                            <span className="text-orange-400 font-bold shrink-0 ml-2">
+                              {formatAudioTime(audioElapsed)} / 04:15
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-1 h-5 overflow-hidden">
+                            {[
+                              12, 24, 18, 30, 16, 28, 22, 14, 26, 32, 20, 15, 28, 22, 35, 18, 26,
+                              14, 30, 20, 16, 24, 18, 22,
+                            ].map((h, barIdx) => (
+                              <span
+                                key={barIdx}
+                                className={`w-1 rounded-full transition-all duration-300 ${
+                                  isPlayingAudio
+                                    ? "bg-gradient-to-t from-orange-500 to-amber-300 animate-pulse"
+                                    : "bg-white/20"
+                                }`}
+                                style={{
+                                  height: isPlayingAudio
+                                    ? `${Math.max(6, (h * ((barIdx % 3) + 1)) % 22)}px`
+                                    : `${Math.max(4, h * 0.4)}px`,
+                                  animationDelay: `${barIdx * 45}ms`,
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Badge */}
+                        <div className="hidden sm:flex items-center gap-1 text-[9px] font-mono text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded shrink-0">
+                          <Volume2 className="size-3" />
+                          <span>320k Lossless</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Dedicated Project Caption Bar */}
+                  <figcaption className="gallery-caption border-t border-white/10 bg-[#0b0d14]/95 px-5 py-4 backdrop-blur-xl">
+                    <div className="flex-1 min-w-0 pr-4">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[10px] font-bold tracking-widest text-orange-400 uppercase">
+                          0{i + 1} / 0{GALLERY_PROJECTS.length}
+                        </span>
+                        <span className="text-white/20">•</span>
+                        <span className="font-mono text-[9px] font-semibold text-zinc-400 uppercase tracking-wider truncate">
+                          {p.category}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-1 text-base sm:text-lg font-bold text-white tracking-tight truncate group-hover:text-orange-300 transition-colors font-sans">
+                        {p.name}
+                      </h3>
+
+                      <p className="mt-0.5 line-clamp-1 text-xs text-zinc-400 font-sans">
+                        {p.subtitle}
+                      </p>
+
+                      {/* Tech Pills */}
+                      <div className="mt-2.5 flex flex-wrap gap-1.5">
+                        {p.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[9px] text-zinc-300"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <button
+                      className="gallery-btn self-center transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-slate-950 group-hover:border-orange-400 group-hover:shadow-orange-500/40 shadow-lg"
+                      aria-label={`View ${p.name}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        soundManager.playClick();
+                        setSelectedProject(p);
+                      }}
+                    >
+                      <ArrowUpRight className="h-5 w-5" />
+                    </button>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -480,14 +702,14 @@ export function ProjectsSection() {
         onOpenChange={(open) => !open && setSelectedProject(null)}
       >
         {selectedProject && (
-          <DialogContent className="max-w-2xl sm:max-w-3xl max-h-[88vh] overflow-y-auto border border-sky-500/30 bg-[#0c1220]/95 p-0 text-white backdrop-blur-2xl shadow-2xl rounded-2xl sm:rounded-3xl z-50">
+          <DialogContent className="max-w-2xl sm:max-w-3xl max-h-[88vh] overflow-y-auto border border-orange-500/30 bg-[#090b10]/98 p-0 text-white backdrop-blur-2xl shadow-2xl rounded-2xl sm:rounded-3xl z-50">
             {/* Custom High-Contrast Floating Close Button */}
             <button
               onClick={() => {
                 soundManager.playClick();
                 setSelectedProject(null);
               }}
-              className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/70 text-white shadow-lg backdrop-blur-md transition-all hover:scale-110 hover:bg-black hover:border-sky-400 focus:outline-none cursor-pointer"
+              className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/70 text-white shadow-lg backdrop-blur-md transition-all hover:scale-110 hover:bg-black hover:border-orange-400 focus:outline-none cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="h-4 w-4" />
@@ -500,23 +722,43 @@ export function ProjectsSection() {
                 fill
                 className="object-cover object-left-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-black/30 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090b10] via-transparent to-black/30 pointer-events-none" />
             </div>
 
             <div className="p-6 sm:p-8 space-y-6">
               <div>
-                <div className="flex items-center gap-2 font-mono text-xs text-sky-400 uppercase tracking-widest font-semibold">
-                  <span>PROJ {selectedProject.id}</span>
+                <div className="flex items-center gap-2 font-mono text-xs text-orange-400 uppercase tracking-widest font-semibold">
+                  <span>PROJECT {selectedProject.id}</span>
                   <span>•</span>
                   <span>{selectedProject.category}</span>
                 </div>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-sans">
                   {selectedProject.name}
                 </h3>
-                <p className="mt-2 text-sm text-slate-300 leading-relaxed">
+                <p className="mt-2 text-sm text-zinc-300 leading-relaxed font-sans">
                   {selectedProject.copy}
                 </p>
               </div>
+
+              {/* Official Store Seals if present */}
+              {selectedProject.storeBadges && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  {selectedProject.storeBadges.map((badge) => (
+                    <div
+                      key={badge.label}
+                      className="flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3.5"
+                    >
+                      <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500 text-slate-950 font-bold shrink-0">
+                        <Check className="size-5 stroke-[2.5]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white">{badge.label}</div>
+                        <div className="text-[10px] font-mono text-emerald-300">{badge.sub}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div>
                 <h4 className="font-mono text-[10px] uppercase tracking-wider text-zinc-400 mb-3 font-semibold">
@@ -526,9 +768,9 @@ export function ProjectsSection() {
                   {selectedProject.highlights.map((h) => (
                     <div
                       key={h}
-                      className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-3 text-xs text-slate-200"
+                      className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-3 text-xs text-zinc-200"
                     >
-                      <CheckCircle2 className="h-4 w-4 text-sky-400 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-orange-400 shrink-0" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -539,7 +781,7 @@ export function ProjectsSection() {
                 {selectedProject.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-sky-500/30 bg-sky-500/10 px-3 py-1 font-mono text-xs font-medium text-sky-300"
+                    className="rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-1 font-mono text-xs font-medium text-orange-300"
                   >
                     {t}
                   </span>
@@ -550,7 +792,7 @@ export function ProjectsSection() {
                 <Link
                   href={`/work/${selectedProject.slug}`}
                   onClick={() => soundManager.playClick()}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-orange-400 hover:underline"
                 >
                   <Layers className="size-3.5" />
                   <span>Open Full Case Study Page</span>
@@ -564,7 +806,7 @@ export function ProjectsSection() {
                       soundManager.playClick();
                       setSelectedProject(null);
                     }}
-                    className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-white/10 transition-colors cursor-pointer"
+                    className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-zinc-300 hover:bg-white/10 transition-colors cursor-pointer"
                   >
                     Close
                   </button>
@@ -574,7 +816,7 @@ export function ProjectsSection() {
                       soundManager.playClick();
                       setSelectedProject(null);
                     }}
-                    className="inline-flex items-center gap-2 rounded-xl bg-sky-500 hover:bg-sky-400 px-5 py-2.5 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition-transform hover:scale-[1.03]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-400 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-lg shadow-orange-500/30 transition-transform hover:scale-[1.03]"
                   >
                     <span>Request Proposal</span>
                     <ArrowRight className="h-4 w-4" />
@@ -586,11 +828,11 @@ export function ProjectsSection() {
         )}
       </Dialog>
 
-      {/* Scoped CSS Styles with Clean Layout Positioning */}
+      {/* Scoped CSS Styles with Obsidian Dark & Warm Amber Theme */}
       <style>{`
         .gallery {
           position: relative;
-          background: #050b18;
+          background: #060709;
           overflow: hidden;
           transition: background-color 0.8s ease;
         }
@@ -601,7 +843,7 @@ export function ProjectsSection() {
         .gallery-bg-layer {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, #050b18 0%, #071a38 45%, #030712 100%);
+          background: radial-gradient(ellipse at 50% 25%, rgba(249, 115, 22, 0.06) 0%, rgba(6, 7, 9, 0.96) 65%, #060709 100%);
           pointer-events: none;
           transition: background 0.8s ease;
           z-index: 0;
@@ -610,11 +852,11 @@ export function ProjectsSection() {
           position: absolute;
           left: 10%;
           top: 20%;
-          width: 55vw;
-          height: 55vw;
+          width: 50vw;
+          height: 50vw;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(37, 99, 235, 0.4), transparent 70%);
-          filter: blur(90px);
+          background: radial-gradient(circle, rgba(249, 115, 22, 0.12), transparent 70%);
+          filter: blur(100px);
           pointer-events: none;
           z-index: 0;
         }
@@ -625,8 +867,8 @@ export function ProjectsSection() {
           width: 45vw;
           height: 45vw;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(6, 182, 212, 0.35), transparent 70%);
-          filter: blur(80px);
+          background: radial-gradient(circle, rgba(217, 119, 6, 0.08), transparent 70%);
+          filter: blur(90px);
           pointer-events: none;
           z-index: 0;
         }
@@ -649,8 +891,8 @@ export function ProjectsSection() {
           line-height: 0.9;
           white-space: nowrap;
           color: transparent;
-          -webkit-text-stroke: 1.5px rgba(147, 197, 253, 0.25);
-          text-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+          -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.06);
+          text-shadow: 0 0 50px rgba(249, 115, 22, 0.06);
           letter-spacing: -0.04em;
         }
         .gallery-intro {
@@ -678,18 +920,18 @@ export function ProjectsSection() {
           margin: 0;
           border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.12);
-          background: #080d19;
+          box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+          background: #0b0d14;
           transform-style: preserve-3d;
           transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
         }
         .gallery-card:hover {
-          box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.3), 0 0 0 1px rgba(56, 189, 248, 0.5);
+          box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 40px rgba(249, 115, 22, 0.16), 0 0 0 1px rgba(249, 115, 22, 0.4);
         }
         .gallery-media {
           position: relative;
           overflow: hidden;
-          background: #020617;
+          background: #06070a;
         }
         .gallery-caption {
           position: relative;
@@ -701,7 +943,7 @@ export function ProjectsSection() {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           background: rgba(255, 255, 255, 0.08);
           color: #fff;
           display: flex;
@@ -725,7 +967,7 @@ export function ProjectsSection() {
           }
           .gallery-intro {
             position: absolute;
-            top: 4vh;
+            top: 3.5vh;
             left: 0;
             right: 0;
             margin: 0 auto;
@@ -737,10 +979,10 @@ export function ProjectsSection() {
             inset: 0;
             display: flex;
             align-items: center;
-            gap: 6vw;
+            gap: 5vw;
             width: max-content;
             margin: 0;
-            padding: 22vh 20vw 4vh;
+            padding: 24vh 16vw 4vh;
             perspective: 1600px;
             max-width: none;
           }
