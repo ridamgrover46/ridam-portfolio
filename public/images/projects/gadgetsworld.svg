@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#111927" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#gw-bg)" rx="16" />
+  <rect width="1200" height="750" fill="none" stroke="#1f2a3f" stroke-width="2" rx="16" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#0d1424" rx="16" />
+  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
+  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
+  <rect x="110" y="14" width="290" height="20" rx="6" fill="#1b253b" />
+  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">gadgetsworld-benchmark.web.app / compare / flagship</text>
+
+  <!-- Header -->
+  <text x="48" y="96" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PERSONAL PROJECT • SPECS DISCOVERY ENGINE</text>
+  <text x="48" y="132" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">GadgetsWorld — Hardware Matrix &amp; Compare</text>
+  <text x="48" y="156" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">Built with React.js &amp; Tailwind CSS to deliver instant side-by-side hardware spec evaluations and filtering.</text>
+
+  <!-- Filter chips -->
+  <rect x="48" y="180" width="110" height="32" rx="16" fill="#38bdf8" opacity="0.2" stroke="#38bdf8" stroke-width="1" />
+  <text x="68" y="201" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">All Devices</text>
+
+  <rect x="170" y="180" width="110" height="32" rx="16" fill="#162033" stroke="#253552" stroke-width="1" />
+  <text x="194" y="201" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Smartphones</text>
+
+  <rect x="292" y="180" width="100" height="32" rx="16" fill="#162033" stroke="#253552" stroke-width="1" />
+  <text x="318" y="201" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Laptops</text>
+
+  <rect x="404" y="180" width="110" height="32" rx="16" fill="#162033" stroke="#253552" stroke-width="1" />
+  <text x="424" y="201" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Audio Gear</text>
+
+  <!-- Comparison Matrix View -->
+  <rect x="48" y="234" width="1104" height="470" rx="12" fill="#101826" stroke="#1f2c42" stroke-width="1" />
+
+  <!-- Columns -->
+  <!-- Label Column -->
+  <rect x="48" y="234" width="230" height="470" rx="12" fill="#0d1420" />
+  <text x="72" y="276" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="700">SPECIFICATION</text>
+  <line x1="48" y1="294" x2="278" y2="294" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="336" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Processor SoC</text>
+  <line x1="48" y1="360" x2="278" y2="360" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="402" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Display Technology</text>
+  <line x1="48" y1="426" x2="278" y2="426" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="468" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Battery &amp; Charging</text>
+  <line x1="48" y1="492" x2="278" y2="492" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="534" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Camera Optics</text>
+  <line x1="48" y1="558" x2="278" y2="558" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="600" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Geekbench Score</text>
+  <line x1="48" y1="624" x2="278" y2="624" stroke="#1f2c42" stroke-width="1" />
+  <text x="72" y="666" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Overall Rating</text>
+
+  <!-- Device 1 -->
+  <text x="310" y="276" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Aura Pro Max (2025)</text>
+  <text x="310" y="336" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">Snapdragon 8 Gen 3 (4nm)</text>
+  <text x="310" y="402" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">6.8&quot; 120Hz LTPO OLED 2600nits</text>
+  <text x="310" y="468" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">5,400 mAh • 100W SuperVOOC</text>
+  <text x="310" y="534" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">50MP Sony LYT-900 1-inch sensor</text>
+  <text x="310" y="600" fill="#34d399" font-family="monospace" font-size="14" font-weight="700">7,240 (Multi-core)</text>
+  <text x="310" y="666" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="14" font-weight="700">★ 9.4 / 10</text>
+
+  <line x1="590" y1="234" x2="590" y2="704" stroke="#1f2c42" stroke-width="1" />
+
+  <!-- Device 2 -->
+  <text x="620" y="276" fill="#a855f7" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Vanguard Titan X</text>
+  <text x="620" y="336" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">Apple A18 Pro Bionic (3nm)</text>
+  <text x="620" y="402" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">6.9&quot; Super Retina XDR 120Hz</text>
+  <text x="620" y="468" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">4,685 mAh • MagSafe 25W</text>
+  <text x="620" y="534" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">48MP Fusion 5x Telephoto</text>
+  <text x="620" y="600" fill="#34d399" font-family="monospace" font-size="14" font-weight="700">8,620 (Multi-core)</text>
+  <text x="620" y="666" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="14" font-weight="700">★ 9.6 / 10</text>
+
+  <line x1="880" y1="234" x2="880" y2="704" stroke="#1f2c42" stroke-width="1" />
+
+  <!-- Device 3 -->
+  <text x="910" y="276" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Pixel Nova Ultra</text>
+  <text x="910" y="336" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">Google Tensor G4 (4nm)</text>
+  <text x="910" y="402" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">6.7&quot; Super Actua 1-120Hz</text>
+  <text x="910" y="468" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">5,060 mAh • 37W Fast Charge</text>
+  <text x="910" y="534" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">50MP Quad PD + Magic Editor</text>
+  <text x="910" y="600" fill="#34d399" font-family="monospace" font-size="14" font-weight="700">5,890 (Multi-core)</text>
+  <text x="910" y="666" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="14" font-weight="700">★ 9.1 / 10</text>
+</svg>
+

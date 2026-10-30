@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="100%" height="100%">
+  <defs>
+    <!-- Dark Vignette Gradient -->
+    <radialGradient id="rim-glow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#ff7a18" stop-opacity="0.35" />
+      <stop offset="35%" stop-color="#ff5400" stop-opacity="0.15" />
+      <stop offset="70%" stop-color="#060709" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#060709" stop-opacity="1" />
+    </radialGradient>
+
+    <linearGradient id="fade-bottom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Halftone Screen Pattern -->
+    <pattern id="halftone" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="1.6" fill="#ffffff" opacity="0.08" />
+    </pattern>
+
+    <!-- Micro matrix dots -->
+    <pattern id="matrix-lines" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.8" fill="#ff7a18" opacity="0.18" />
+    </pattern>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="900" height="1100" fill="#060709" />
+
+  <!-- Ambient Amber Glow behind Head -->
+  <circle cx="450" cy="380" r="340" fill="url(#rim-glow)" />
+
+  <!-- Cinematic Developer Silhouette Contour -->
+  <g mask="url(#fade-mask)" opacity="0.92">
+    <!-- Mask for smooth bottom fade -->
+    <mask id="fade-mask">
+      <rect width="900" height="1100" fill="url(#fade-bottom)" />
+    </mask>
+
+    <!-- Back Rim Light Curve -->
+    <path d="M450 140 C 330 140, 290 230, 270 330 C 255 410, 275 510, 310 590 C 345 670, 390 730, 450 760 C 510 730, 555 670, 590 590 C 625 510, 645 410, 630 330 C 610 230, 570 140, 450 140 Z" fill="#0c0e14" stroke="#ff7a18" stroke-width="2" stroke-opacity="0.4" />
+
+    <!-- Hair & Head Contour -->
+    <path d="M450 160 C 360 160, 310 230, 295 320 C 285 390, 295 460, 320 530 C 340 580, 370 630, 410 670 L 450 700 L 490 670 C 530 630, 560 580, 580 530 C 605 460, 615 390, 605 320 C 590 230, 540 160, 450 160 Z" fill="#11131c" />
+
+    <!-- Shoulders / Torso -->
+    <path d="M320 670 C 260 710, 180 760, 110 840 C 60 900, 40 980, 30 1100 L 870 1100 C 860 980, 840 900, 790 840 C 720 760, 640 710, 580 670 Z" fill="#0e1017" stroke="#ffffff" stroke-width="1" stroke-opacity="0.08" />
+
+    <!-- Neck -->
+    <path d="M400 660 L 400 750 C 400 780, 500 780, 500 750 L 500 660 Z" fill="#141724" />
+
+    <!-- Facial Structure Highlights (Artistic Noir Shading) -->
+    <!-- Forehead -->
+    <ellipse cx="450" cy="290" rx="95" ry="50" fill="#1a1e2d" opacity="0.6" />
+    <!-- Brow Bone Highlight -->
+    <path d="M380 340 Q 450 360 520 340" stroke="#ff8c38" stroke-width="2" stroke-opacity="0.4" fill="none" />
+    
+    <!-- Eyes contour -->
+    <ellipse cx="410" cy="375" rx="22" ry="10" fill="#06070a" />
+    <circle cx="410" cy="375" r="4" fill="#ffffff" opacity="0.6" />
+    <ellipse cx="490" cy="375" rx="22" ry="10" fill="#06070a" />
+    <circle cx="490" cy="375" r="4" fill="#ffffff" opacity="0.6" />
+
+    <!-- Nose Ridge -->
+    <path d="M450 350 L 445 440 L 460 440 Z" fill="#202538" opacity="0.8" />
+    <path d="M452 350 L 452 440" stroke="#ff8c38" stroke-width="1.5" stroke-opacity="0.35" />
+
+    <!-- Lips / Mouth -->
+    <path d="M425 490 Q 450 484 475 490 Q 450 510 425 490 Z" fill="#121520" />
+    <!-- Jaw & Beard Shadow -->
+    <path d="M350 490 C 370 580, 420 630, 450 635 C 480 630, 530 580, 550 490 C 520 540, 480 580, 450 580 C 420 580, 380 540, 350 490 Z" fill="#090a10" opacity="0.8" />
+
+    <!-- Editorial Halftone Pattern Overlay -->
+    <rect x="200" y="140" width="500" height="700" fill="url(#halftone)" />
+    <!-- Matrix dots on shoulders -->
+    <rect x="0" y="600" width="900" height="500" fill="url(#matrix-lines)" />
+  </g>
+
+  <!-- Ambient Light Streak across chest -->
+  <path d="M120 1020 Q 450 880 780 1020" stroke="#ff7a18" stroke-width="1.5" stroke-opacity="0.25" fill="none" />
+</svg>
+

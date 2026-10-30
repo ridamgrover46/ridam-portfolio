@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecom-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e14" />
+      <stop offset="100%" stop-color="#141824" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2035" />
+      <stop offset="100%" stop-color="#121626" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#ecom-bg)" rx="16" />
+  <rect width="1200" height="750" fill="none" stroke="#232942" stroke-width="2" rx="16" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#101422" rx="16" />
+  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
+  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
+  <rect x="110" y="14" width="280" height="20" rx="6" fill="#1c2238" />
+  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">store.apex-commerce.app / catalog / tech</text>
+
+  <!-- Navbar -->
+  <rect x="24" y="68" width="1152" height="60" rx="10" fill="#13182b" stroke="#252d4b" stroke-width="1" />
+  <text x="48" y="104" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="800">NEXUS COMMERCE</text>
+  
+  <!-- Search input -->
+  <rect x="250" y="80" width="420" height="36" rx="8" fill="#1c233f" stroke="#2e3860" stroke-width="1" />
+  <text x="270" y="103" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Search high-performance hardware, audio, gear...</text>
+
+  <!-- Nav links & auth badge -->
+  <text x="710" y="103" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Categories</text>
+  <text x="800" y="103" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Deals</text>
+  <text x="860" y="103" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Admin Hub</text>
+
+  <rect x="960" y="80" width="90" height="36" rx="8" fill="#1e293b" />
+  <text x="978" y="103" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13">Cart (3)</text>
+
+  <rect x="1064" y="80" width="96" height="36" rx="8" fill="#4f46e5" />
+  <text x="1080" y="103" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Google In</text>
+
+  <!-- Main Banner -->
+  <rect x="24" y="148" width="1152" height="150" rx="12" fill="url(#card-grad)" stroke="#273254" stroke-width="1" />
+  <text x="60" y="196" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">FULL-STACK MERN ARCHITECTURE</text>
+  <text x="60" y="234" fill="#ffffff" font-family="system-ui, sans-serif" font-size="26" font-weight="800">Engineered for Rapid Checkout &amp; Scale</text>
+  <text x="60" y="262" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">JWT authentication, Google OAuth 2.0, Redux state caching, and responsive Ant Design UI.</text>
+  
+  <rect x="940" y="180" width="200" height="86" rx="10" fill="#0c101d" stroke="#2a3558" stroke-width="1" />
+  <text x="960" y="210" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">DATABASE STATUS</text>
+  <text x="960" y="238" fill="#10b981" font-family="system-ui, sans-serif" font-size="18" font-weight="700">MongoDB Atlas</text>
+  <text x="960" y="254" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Aggregated Index Queries</text>
+
+  <!-- Product Grid (4 items) -->
+  <text x="24" y="332" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Featured Catalog</text>
+
+  <!-- Product 1 -->
+  <rect x="24" y="352" width="270" height="360" rx="12" fill="#13182b" stroke="#252d4b" stroke-width="1" />
+  <rect x="36" y="364" width="246" height="180" rx="8" fill="#1d243e" />
+  <circle cx="159" cy="454" r="44" fill="#312e81" opacity="0.6" />
+  <text x="139" y="462" fill="#818cf8" font-family="system-ui, sans-serif" font-size="28">🎧</text>
+  <text x="40" y="574" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Studio Pro ANC Headset</text>
+  <text x="40" y="596" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Spatial 40mm Neodymium drivers</text>
+  <text x="40" y="640" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="18" font-weight="800">$289.00</text>
+  <rect x="180" y="620" width="102" height="32" rx="6" fill="#4f46e5" />
+  <text x="198" y="641" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Add to Cart</text>
+
+  <!-- Product 2 -->
+  <rect x="318" y="352" width="270" height="360" rx="12" fill="#13182b" stroke="#252d4b" stroke-width="1" />
+  <rect x="330" y="364" width="246" height="180" rx="8" fill="#1d243e" />
+  <circle cx="453" cy="454" r="44" fill="#1e3a8a" opacity="0.6" />
+  <text x="433" y="462" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="28">⌨️</text>
+  <text x="334" y="574" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">CyberDeck Mechanical 75%</text>
+  <text x="334" y="596" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Gateron Yellow Hot-Swap switches</text>
+  <text x="334" y="640" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="18" font-weight="800">$165.00</text>
+  <rect x="474" y="620" width="102" height="32" rx="6" fill="#4f46e5" />
+  <text x="492" y="641" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Add to Cart</text>
+
+  <!-- Product 3 -->
+  <rect x="612" y="352" width="270" height="360" rx="12" fill="#13182b" stroke="#252d4b" stroke-width="1" />
+  <rect x="624" y="364" width="246" height="180" rx="8" fill="#1d243e" />
+  <circle cx="747" cy="454" r="44" fill="#064e3b" opacity="0.6" />
+  <text x="727" y="462" fill="#34d399" font-family="system-ui, sans-serif" font-size="28">🖱️</text>
+  <text x="628" y="574" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Ultralight Optical Mouse</text>
+  <text x="628" y="596" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">58g Magnesium alloy chassis</text>
+  <text x="628" y="640" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="18" font-weight="800">$119.00</text>
+  <rect x="768" y="620" width="102" height="32" rx="6" fill="#4f46e5" />
+  <text x="786" y="641" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Add to Cart</text>
+
+  <!-- Product 4 -->
+  <rect x="906" y="352" width="270" height="360" rx="12" fill="#13182b" stroke="#252d4b" stroke-width="1" />
+  <rect x="918" y="364" width="246" height="180" rx="8" fill="#1d243e" />
+  <circle cx="1041" cy="454" r="44" fill="#4c1d95" opacity="0.6" />
+  <text x="1021" y="462" fill="#c084fc" font-family="system-ui, sans-serif" font-size="28">🖥️</text>
+  <text x="922" y="574" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">UltraWide 34&quot; Nano-IPS</text>
+  <text x="922" y="596" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">175Hz 1ms DCI-P3 98%</text>
+  <text x="922" y="640" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="18" font-weight="800">$749.00</text>
+  <rect x="1062" y="620" width="102" height="32" rx="6" fill="#4f46e5" />
+  <text x="1080" y="641" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Add to Cart</text>
+</svg>
+

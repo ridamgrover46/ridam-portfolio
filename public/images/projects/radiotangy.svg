@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16" />
+      <stop offset="100%" stop-color="#141829" />
+    </linearGradient>
+    <linearGradient id="rt-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#rt-bg)" rx="16" />
+  <rect width="1200" height="750" fill="none" stroke="#252b48" stroke-width="2" rx="16" />
+
+  <!-- Top Window Bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#101322" rx="16" />
+  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
+  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
+  <rect x="110" y="14" width="280" height="20" rx="6" fill="#1a1e35" />
+  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="500">radiotangy.com / series / whispers-of-the-night</text>
+
+  <!-- Sidebar -->
+  <rect x="24" y="68" width="220" height="580" rx="12" fill="#12162a" stroke="#232946" stroke-width="1" />
+  <text x="44" y="104" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">RadioTangy</text>
+  <rect x="156" y="92" width="68" height="18" rx="4" fill="#6366f1" opacity="0.2" />
+  <text x="166" y="105" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="10" font-weight="600">AUDIO PRO</text>
+
+  <!-- Sidebar Nav items -->
+  <rect x="36" y="130" width="196" height="36" rx="8" fill="#1e2442" />
+  <circle cx="56" cy="148" r="5" fill="#818cf8" />
+  <text x="72" y="152" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Audio Stories</text>
+
+  <rect x="36" y="174" width="196" height="36" rx="8" fill="transparent" />
+  <circle cx="56" cy="192" r="4" fill="#64748b" />
+  <text x="72" y="196" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Seasons &amp; Series</text>
+
+  <rect x="36" y="218" width="196" height="36" rx="8" fill="transparent" />
+  <circle cx="56" cy="236" r="4" fill="#64748b" />
+  <text x="72" y="240" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Episodes Library</text>
+
+  <rect x="36" y="262" width="196" height="36" rx="8" fill="transparent" />
+  <circle cx="56" cy="280" r="4" fill="#64748b" />
+  <text x="72" y="284" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Subscribers &amp; Access</text>
+
+  <!-- Now Playing in sidebar -->
+  <rect x="36" y="470" width="196" height="160" rx="10" fill="#181d36" stroke="#2e365e" stroke-width="1" />
+  <rect x="48" y="482" width="56" height="56" rx="8" fill="#4338ca" />
+  <circle cx="76" cy="510" r="14" fill="#6366f1" />
+  <polygon points="73,502 83,510 73,518" fill="#ffffff" />
+  <text x="114" y="500" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Season 2: Ep 4</text>
+  <text x="114" y="518" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">The Silent Fog</text>
+  <!-- Mini waveform -->
+  <path d="M48 565 L52 555 L56 575 L60 550 L64 570 L68 558 L72 568 L76 545 L80 575 L84 560 L88 565 L92 550 L96 570 L100 555 L104 565 L108 558 L112 568 L116 550 L120 572 L124 560 L128 565 L132 555 L136 570 L140 558 L144 565 L148 552 L152 572 L156 560 L160 565 L164 555 L168 568 L172 555 L176 565 L180 558 L184 565 L188 558 L192 565 L196 560 L200 565 L204 558 L208 565 L212 560 L216 565 L220 560" stroke="#818cf8" stroke-width="2" fill="none" />
+
+  <!-- Main Content Area -->
+  <rect x="264" y="68" width="912" height="580" rx="12" fill="#0f1222" stroke="#232946" stroke-width="1" />
+
+  <!-- Header Banner -->
+  <rect x="284" y="88" width="872" height="180" rx="12" fill="url(#rt-accent)" opacity="0.15" />
+  <rect x="284" y="88" width="872" height="180" rx="12" stroke="#4f46e5" stroke-width="1" fill="none" />
+  
+  <text x="312" y="128" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">ORIGINAL AUDIO SERIES</text>
+  <text x="312" y="166" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">Whispers of the Night: Season 2</text>
+  <text x="312" y="196" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">Immersive 3D audio story produced with dynamic binaural soundscapes &amp; episodic telemetry.</text>
+  
+  <rect x="312" y="216" width="130" height="34" rx="17" fill="#6366f1" />
+  <text x="342" y="238" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">▶ Play Season</text>
+  <rect x="454" y="216" width="130" height="34" rx="17" fill="#1e2442" stroke="#3b447a" stroke-width="1" />
+  <text x="478" y="238" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">View 12 Episodes</text>
+
+  <!-- Episode Grid / List -->
+  <text x="284" y="304" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Episodes &amp; Chapters</text>
+  
+  <!-- Episode Row 1 -->
+  <rect x="284" y="324" width="872" height="64" rx="10" fill="#151930" stroke="#262e54" stroke-width="1" />
+  <circle cx="316" cy="356" r="16" fill="#6366f1" />
+  <polygon points="314,350 322,356 314,362" fill="#ffffff" />
+  <text x="348" y="352" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 01: The Midnight Crossing</text>
+  <text x="348" y="370" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Duration: 28:14 • Mastered Lossless Audio • Season Premiere</text>
+  <rect x="1040" y="342" width="96" height="28" rx="6" fill="#10b981" opacity="0.15" />
+  <text x="1054" y="360" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600">COMPLETED</text>
+
+  <!-- Episode Row 2 -->
+  <rect x="284" y="398" width="872" height="64" rx="10" fill="#181e3a" stroke="#4338ca" stroke-width="1.5" />
+  <circle cx="316" cy="430" r="16" fill="#818cf8" />
+  <rect x="311" y="424" width="3" height="12" fill="#0f172a" />
+  <rect x="317" y="424" width="3" height="12" fill="#0f172a" />
+  <text x="348" y="426" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 02: Echoes from the Deep</text>
+  <text x="348" y="444" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12">Playing now: 14:32 / 32:40 • High-Definition Stream</text>
+  <!-- Mini Progress bar -->
+  <rect x="760" y="428" width="240" height="6" rx="3" fill="#2d3763" />
+  <rect x="760" y="428" width="110" height="6" rx="3" fill="#6366f1" />
+  <rect x="1040" y="416" width="96" height="28" rx="6" fill="#6366f1" opacity="0.2" />
+  <text x="1062" y="434" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PLAYING</text>
+
+  <!-- Episode Row 3 -->
+  <rect x="284" y="472" width="872" height="64" rx="10" fill="#151930" stroke="#262e54" stroke-width="1" />
+  <circle cx="316" cy="504" r="16" fill="#1e2442" stroke="#3d4677" stroke-width="1" />
+  <polygon points="314,498 322,504 314,510" fill="#94a3b8" />
+  <text x="348" y="500" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Episode 03: The Clockmaker's Secret</text>
+  <text x="348" y="518" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Duration: 34:10 • Protected Access • Requires Subscription</text>
+  <rect x="1040" y="490" width="96" height="28" rx="6" fill="#f59e0b" opacity="0.15" />
+  <text x="1058" y="508" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PREMIUM</text>
+
+  <!-- Bottom Player Bar -->
+  <rect x="264" y="560" width="912" height="88" rx="0" fill="#0b0e1b" stroke="#252b48" stroke-width="1" />
+  <!-- Scrubber -->
+  <rect x="284" y="574" width="872" height="4" rx="2" fill="#202742" />
+  <rect x="284" y="574" width="410" height="4" rx="2" fill="#6366f1" />
+  <circle cx="694" cy="576" r="6" fill="#ffffff" filter="url(#rt-glow)" />
+
+  <text x="284" y="608" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Echoes from the Deep</text>
+  <text x="284" y="626" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">RadioTangy Original • Season 2 • Chapter 4</text>
+
+  <!-- Player controls center -->
+  <circle cx="680" cy="614" r="18" fill="#6366f1" />
+  <polygon points="676,606 688,614 676,622" fill="#ffffff" />
+  <text x="590" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">⏮</text>
+  <text x="730" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">⏭</text>
+
+  <text x="1060" y="618" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">14:32 / 32:40</text>
+</svg>
+

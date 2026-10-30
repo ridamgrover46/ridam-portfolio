@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080b12" />
+      <stop offset="100%" stop-color="#101826" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#cv-bg)" rx="16" />
+  <rect width="1200" height="750" fill="none" stroke="#1c2638" stroke-width="2" rx="16" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#0d131f" rx="16" />
+  <circle cx="32" cy="24" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="52" cy="24" r="6" fill="#f59e0b" opacity="0.8" />
+  <circle cx="72" cy="24" r="6" fill="#10b981" opacity="0.8" />
+  <rect x="110" y="14" width="310" height="20" rx="6" fill="#182235" />
+  <text x="130" y="28" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">system.vision-auth.local / camera-feed / stream:0</text>
+
+  <!-- Left: Live Computer Vision Stream simulation -->
+  <rect x="24" y="68" width="680" height="654" rx="12" fill="#06090e" stroke="#1c2638" stroke-width="1" />
+  
+  <!-- Video Feed overlay & grid -->
+  <text x="44" y="104" fill="#10b981" font-family="monospace" font-size="12">● LIVE FEED [30 FPS - 1080p RGB]</text>
+  <text x="560" y="104" fill="#94a3b8" font-family="monospace" font-size="12">OPENCV 4.8</text>
+
+  <!-- Detection Bounding Box -->
+  <rect x="180" y="140" width="360" height="420" rx="4" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="8 4" />
+  <circle cx="180" cy="140" r="4" fill="#10b981" />
+  <circle cx="540" cy="140" r="4" fill="#10b981" />
+  <circle cx="180" cy="560" r="4" fill="#10b981" />
+  <circle cx="540" cy="560" r="4" fill="#10b981" />
+
+  <!-- Facial landmark nodes -->
+  <!-- Eyes -->
+  <circle cx="310" cy="290" r="6" fill="#38bdf8" />
+  <circle cx="410" cy="290" r="6" fill="#38bdf8" />
+  <line x1="310" y1="290" x2="410" y2="290" stroke="#38bdf8" stroke-width="1" opacity="0.6" />
+  <!-- Nose bridge -->
+  <circle cx="360" cy="350" r="5" fill="#38bdf8" />
+  <line x1="360" y1="300" x2="360" y2="350" stroke="#38bdf8" stroke-width="1" opacity="0.6" />
+  <!-- Mouth contour -->
+  <circle cx="330" cy="420" r="5" fill="#38bdf8" />
+  <circle cx="360" cy="424" r="5" fill="#38bdf8" />
+  <circle cx="390" cy="420" r="5" fill="#38bdf8" />
+  <path d="M330 420 Q360 436 390 420" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+  <!-- Jawline points -->
+  <circle cx="260" cy="360" r="4" fill="#38bdf8" opacity="0.5" />
+  <circle cx="460" cy="360" r="4" fill="#38bdf8" opacity="0.5" />
+  <circle cx="360" cy="490" r="4" fill="#38bdf8" opacity="0.5" />
+
+  <!-- Detection Label tag -->
+  <rect x="180" y="112" width="220" height="26" rx="4" fill="#10b981" />
+  <text x="190" y="129" fill="#022c22" font-family="monospace" font-size="12" font-weight="700">MATCH: EMP_ID #1042 (98.6%)</text>
+
+  <!-- Live telemetry readout -->
+  <rect x="44" y="600" width="640" height="100" rx="8" fill="#0d1420" stroke="#1c2638" stroke-width="1" />
+  <text x="64" y="626" fill="#38bdf8" font-family="monospace" font-size="11">> Model: Haar Cascade + Deep Neural Embeddings (128-d vectors)</text>
+  <text x="64" y="648" fill="#94a3b8" font-family="monospace" font-size="11">> Euclidean Distance: 0.32 (Threshold: 0.55)</text>
+  <text x="64" y="670" fill="#34d399" font-family="monospace" font-size="11">> Verified Identity: Ridam Grover | Attendance Logged to SQLite</text>
+
+  <!-- Right: Attendance Log & Statistics -->
+  <rect x="724" y="68" width="452" height="654" rx="12" fill="#0a0e17" stroke="#1c2638" stroke-width="1" />
+
+  <text x="748" y="104" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Automated Attendance Log</text>
+  <text x="748" y="126" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Academic / Engineering Project • Python, OpenCV, NumPy</text>
+
+  <!-- Summary stats -->
+  <rect x="748" y="148" width="196" height="68" rx="8" fill="#121b2a" />
+  <text x="764" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">TODAY'S ATTENDEES</text>
+  <text x="764" y="200" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="800">42 / 45</text>
+
+  <rect x="960" y="148" width="192" height="68" rx="8" fill="#121b2a" />
+  <text x="776" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">ACCURACY RATE</text>
+  <text x="976" y="200" fill="#10b981" font-family="system-ui, sans-serif" font-size="22" font-weight="800">99.2%</text>
+
+  <!-- Recent Logs -->
+  <text x="748" y="246" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Real-Time Verification Stream</text>
+
+  <!-- Log item 1 -->
+  <rect x="748" y="262" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
+  <circle cx="774" cy="292" r="14" fill="#064e3b" />
+  <text x="768" y="297" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
+  <text x="800" y="284" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Ridam Grover (#1042)</text>
+  <text x="800" y="304" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 09:02:14 AM • Confidence: 98.6%</text>
+
+  <!-- Log item 2 -->
+  <rect x="748" y="334" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
+  <circle cx="774" cy="364" r="14" fill="#064e3b" />
+  <text x="768" y="369" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
+  <text x="800" y="356" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Aarav Sharma (#1029)</text>
+  <text x="800" y="376" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 08:58:40 AM • Confidence: 97.4%</text>
+
+  <!-- Log item 3 -->
+  <rect x="748" y="406" width="404" height="60" rx="8" fill="#101826" stroke="#1c283c" stroke-width="1" />
+  <circle cx="774" cy="436" r="14" fill="#064e3b" />
+  <text x="768" y="441" fill="#34d399" font-family="system-ui, sans-serif" font-size="14">✓</text>
+  <text x="800" y="428" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Neha Verma (#1033)</text>
+  <text x="800" y="448" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Checked in at 08:54:12 AM • Confidence: 99.1%</text>
+
+  <!-- Pipeline Diagram block -->
+  <rect x="748" y="484" width="404" height="216" rx="8" fill="#0c121d" stroke="#1a2436" stroke-width="1" />
+  <text x="768" y="512" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">PROCESSING PIPELINE</text>
+  
+  <rect x="768" y="528" width="100" height="38" rx="6" fill="#162235" />
+  <text x="782" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Frame Capture</text>
+
+  <text x="874" y="552" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14">→</text>
+
+  <rect x="894" y="528" width="110" height="38" rx="6" fill="#162235" />
+  <text x="906" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Haar Detection</text>
+
+  <text x="1010" y="552" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14">→</text>
+
+  <rect x="1030" y="528" width="104" height="38" rx="6" fill="#162235" />
+  <text x="1042" y="552" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">Vector Embed</text>
+
+  <!-- Lower row -->
+  <text x="768" y="600" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Database Logging:</text>
+  <text x="768" y="624" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Auto-generates daily CSV reports &amp; records timestamped entries into local SQLite with anti-spoofing heuristic verification.</text>
+</svg>
+
