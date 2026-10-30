@@ -12,10 +12,8 @@ import { SkillsSection } from "@/components/sections/skills-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { Footer } from "@/components/layout/footer";
-import { ResumeModal } from "@/components/sections/resume-modal";
 
 export default function Home() {
-  const [resumeOpen, setResumeOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
 
   const handleSelectService = (serviceTitle: string) => {
@@ -29,11 +27,11 @@ export default function Home() {
         <CustomCursor />
 
         {/* Global Navigation */}
-        <Navbar onOpenResume={() => setResumeOpen(true)} />
+        <Navbar />
 
         {/* Main Content Sections */}
         <main className="relative z-10 flex flex-col">
-          <Hero onOpenResume={() => setResumeOpen(true)} />
+          <Hero />
           <ProofStrip />
           <AboutSection />
           <ProjectsSection />
@@ -44,12 +42,6 @@ export default function Home() {
 
         {/* Global Minimalist Footer */}
         <Footer />
-
-        {/* Interactive Curriculum Vitae Modal */}
-        <ResumeModal
-          isOpen={resumeOpen}
-          onClose={() => setResumeOpen(false)}
-        />
       </div>
     </SmoothScrollProvider>
   );

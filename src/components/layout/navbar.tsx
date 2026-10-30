@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { name: "Contact", href: "/#contact" },
 ];
 
-export function Navbar({ onOpenResume }: { onOpenResume?: () => void }) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -89,17 +89,6 @@ export function Navbar({ onOpenResume }: { onOpenResume?: () => void }) {
 
             {/* Right Action Cluster */}
             <div className="flex items-center gap-3">
-              {/* Curriculum Vitae trigger (if provided) */}
-              {onOpenResume && (
-                <button
-                  type="button"
-                  onClick={onOpenResume}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/30 text-zinc-300 hover:text-white font-mono text-[11px] tracking-wider transition-colors"
-                >
-                  <span>CV</span>
-                </button>
-              )}
-
               {/* Main Pill CTA: Let's talk */}
               <Link
                 href="/#contact"
@@ -152,19 +141,6 @@ export function Navbar({ onOpenResume }: { onOpenResume?: () => void }) {
                 <span>Start a Project</span>
                 <ArrowUpRight className="size-4" />
               </Link>
-
-              {onOpenResume && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleLinkClick();
-                    onOpenResume();
-                  }}
-                  className="py-3 rounded-full border border-white/15 text-zinc-300 font-mono text-xs uppercase tracking-wider"
-                >
-                  Curriculum Vitae
-                </button>
-              )}
             </div>
           </nav>
         </div>

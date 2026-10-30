@@ -10,13 +10,11 @@ import { HalftonePortrait } from "@/components/three/HalftonePortrait";
 
 export interface HeroProps {
   imageSrc?: string;
-  onOpenResume?: () => void;
 }
 
 export function Hero({
   imageSrc = "/images/ridam-portrait.webp",
-  onOpenResume,
-}: HeroProps) {
+}: HeroProps = {}) {
   const heroRef = useRef<HTMLElement>(null);
   const portraitRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -226,19 +224,6 @@ export function Hero({
                 <span>Let&apos;s Talk</span>
                 <ArrowUpRight className="size-3.5 text-orange-400" />
               </a>
-
-              {onOpenResume && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    soundManager.playClick();
-                    onOpenResume();
-                  }}
-                  className="hidden md:inline-flex items-center gap-1.5 px-4 py-3 rounded-full border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
-                >
-                  <span>Curriculum Vitae</span>
-                </button>
-              )}
             </motion.div>
           </div>
         </div>
