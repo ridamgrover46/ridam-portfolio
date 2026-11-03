@@ -10,7 +10,7 @@ export interface PersonalData {
   phone: string;
   phoneRaw: string;
   whatsappUrl: string;
-  github: string;
+  instagram: string;
   linkedin: string;
   resumeUrl: string;
   education: Array<{
@@ -34,8 +34,8 @@ export const personalData: PersonalData = {
   phone: "+91 6239477727",
   phoneRaw: "+916239477727",
   whatsappUrl: "https://wa.me/916239477727",
-  github: "https://github.com/ridamgrover",
-  linkedin: "https://linkedin.com/in/ridamgrover",
+  instagram: "https://www.instagram.com/_ridam.grover/",
+  linkedin: "https://www.linkedin.com/in/ridam-grover-483529304/",
   resumeUrl: "/resume/Ridam_Grover_Resume.pdf",
   education: [
     {

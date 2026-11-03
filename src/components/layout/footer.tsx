@@ -163,12 +163,12 @@ export function Footer() {
               WhatsApp
             </a>
             <a
-              href={personalData.github}
+              href={personalData.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              GitHub
+              Instagram
             </a>
             <a
               href={personalData.linkedin}

@@ -236,22 +236,22 @@ export function ContactSection({
             <Reveal delay={0.3}>
               <div className="space-y-3 font-mono">
                 <span className="text-[10px] text-zinc-500 uppercase tracking-widest block">
-                  Profiles &amp; Repositories
+                  Profiles &amp; Connect
                 </span>
                 <div className="grid grid-cols-2 gap-3">
                   <a
-                    href={personalData.github}
+                    href={personalData.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => soundManager.playClick()}
-                    className="p-4 rounded-2xl bg-[#090a0f] border border-white/[0.08] hover:border-orange-500/30 transition-all flex items-center justify-between group"
+                    className="p-4 rounded-2xl bg-[#090a0f] border border-white/[0.08] hover:border-pink-500/30 transition-all flex items-center justify-between group"
                   >
                     <div>
-                      <span className="text-xs font-semibold text-white group-hover:text-orange-300 block">
-                        GitHub
+                      <span className="text-xs font-semibold text-white group-hover:text-pink-300 block">
+                        Instagram
                       </span>
                       <span className="text-[10px] text-zinc-500">
-                        @ridamgrover
+                        @_ridam.grover
                       </span>
                     </div>
                     <ExternalLink className="size-3.5 text-zinc-500 group-hover:text-white" />
@@ -269,7 +269,7 @@ export function ContactSection({
                         LinkedIn
                       </span>
                       <span className="text-[10px] text-zinc-500">
-                        /in/ridamgrover
+                        /in/ridam-grover
                       </span>
                     </div>
                     <ExternalLink className="size-3.5 text-zinc-500 group-hover:text-white" />
