@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { scrollToTarget } from "@/lib/scroll";
 
 const NAV_LINKS = [
   { name: "About", href: "/#about" },
@@ -40,8 +41,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = () => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     setMobileMenuOpen(false);
+    if (href.startsWith("/#") || href.startsWith("#")) {
+      const targetHash = href.replace(/^\//, "");
+      scrollToTarget(targetHash, e);
+    }
   };
 
   return (
@@ -57,7 +65,10 @@ export function Navbar() {
             {/* Wordmark in Luxury Editorial Serif */}
             <Link
               href="/"
-              onClick={handleLinkClick}
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                scrollToTarget("#top", e);
+              }}
               className="group flex items-center gap-2 focus-visible:outline-none"
               aria-label="Ridam Grover Home"
             >
@@ -74,7 +85,7 @@ export function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={handleLinkClick}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className={`transition-colors duration-200 ${
                       isActive
                         ? "text-white font-semibold"
@@ -92,7 +103,7 @@ export function Navbar() {
               {/* Main Pill CTA: Let's talk */}
               <Link
                 href="/#contact"
-                onClick={handleLinkClick}
+                onClick={(e) => handleNavClick(e, "/#contact")}
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 hover:bg-white hover:text-black text-white font-mono text-xs uppercase tracking-wider transition-all duration-300"
               >
                 <span>Let&apos;s talk</span>
@@ -125,7 +136,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={handleLinkClick}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="font-serif text-3xl text-zinc-300 hover:text-white transition-colors"
               >
                 {link.name}
@@ -135,7 +146,7 @@ export function Navbar() {
             <div className="pt-8 border-t border-white/10 flex flex-col gap-4">
               <Link
                 href="/#contact"
-                onClick={handleLinkClick}
+                onClick={(e) => handleNavClick(e, "/#contact")}
                 className="inline-flex items-center justify-center gap-2 py-3 rounded-full bg-white text-black font-mono text-xs uppercase tracking-wider font-semibold"
               >
                 <span>Start a Project</span>

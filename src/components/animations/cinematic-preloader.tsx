@@ -20,9 +20,9 @@ export function CinematicPreloader({ onComplete }: CinematicPreloaderProps) {
     // Quick session check if already seen in this session
     const hasSeen = typeof window !== "undefined" ? sessionStorage.getItem("ridam_intro_seen") : null;
     
-    // Counter animation target
+    // Counter animation target (fast, snappy load)
     const counter = { val: 0 };
-    const duration = hasSeen ? 0.6 : 1.3; // Snappy 1.3s on first visit, 0.6s on revisit
+    const duration = hasSeen ? 0.3 : 0.75; // Snappy 0.75s on first visit, 0.3s on revisit
 
     const tl = gsap.timeline({
       onComplete: () => {

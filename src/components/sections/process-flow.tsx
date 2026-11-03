@@ -39,13 +39,13 @@ export function ProcessFlow() {
     }
 
     const ctx = gsap.context(() => {
-      // Scrubbed Timeline: directly tied to scroll position (draws forward when scrolling down, retracts/closes when scrolling up)
+      // Scrubbed Timeline: directly tied to scroll position (fast, snappy, responsive)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom 65%",
-          scrub: 1.2, // Smooth bidirectional scroll scrub
+          start: "top 78%",
+          end: "center 52%",
+          scrub: 0.35, // Snappy low-latency bidirectional scroll scrub
         },
       });
 

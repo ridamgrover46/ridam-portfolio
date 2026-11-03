@@ -21,19 +21,22 @@ export function SmoothScrollProvider({
     // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize Lenis with gentle inertia
+    // Initialize Lenis with snappy, high-performance inertia
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.82,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.18,
+      touchMultiplier: 1.8,
     });
 
     // Synchronize Lenis scroll with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
+
+    // Expose lenis instance globally for reliable smooth-scroll navigation
+    (window as unknown as { lenis?: Lenis }).lenis = lenis;
 
     const tickerCallback = (time: number) => {
       lenis.raf(time * 1000);
@@ -43,6 +46,7 @@ export function SmoothScrollProvider({
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      delete (window as unknown as { lenis?: Lenis }).lenis;
       gsap.ticker.remove(tickerCallback);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

@@ -14,6 +14,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { scrollToTarget } from "@/lib/scroll";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -68,17 +69,17 @@ export function Hero() {
       phrases.forEach((phrase) => {
         scrambleTimeline!
           .to(scrambleRef.current, {
-            duration: 1.15,
+            duration: 0.85,
             scrambleText: {
               text: phrase,
               chars: "!<>-_\\/[]{}—=+*^?#0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-              speed: 0.35,
-              revealDelay: 0.2,
+              speed: 0.5,
+              revealDelay: 0.15,
             },
             ease: "power2.inOut",
           })
           // Pause / hold on settled text before deciphering into the next role
-          .to({}, { duration: 2.2 });
+          .to({}, { duration: 1.6 });
       });
     }
 
@@ -110,12 +111,7 @@ export function Hero() {
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
   ) => {
-    e.preventDefault();
-    soundManager.playClick();
-    const el = document.querySelector(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToTarget(targetId, e);
   };
 
   return (
