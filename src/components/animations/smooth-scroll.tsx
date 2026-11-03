@@ -21,15 +21,31 @@ export function SmoothScrollProvider({
     // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize Lenis with snappy, high-performance inertia
+    // High-Performance Mobile Check:
+    // Touch/mobile devices have native hardware-accelerated momentum scrolling (120Hz ProMotion/AMOLED).
+    // Disabling Lenis virtual-scroll on touch/mobile eliminates touch drag lag and restores buttery native 120 FPS!
+    const isTouchDevice =
+      typeof window !== "undefined" &&
+      (window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth < 768 ||
+        "ontouchstart" in window);
+
+    if (isTouchDevice) {
+      ScrollTrigger.config({
+        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize",
+      });
+      return;
+    }
+
+    // Initialize Lenis ONLY on Desktop Mouse Pointer Devices
     const lenis = new Lenis({
-      duration: 0.82,
+      duration: 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.18,
-      touchMultiplier: 1.8,
+      wheelMultiplier: 1.15,
+      touchMultiplier: 1.0,
     });
 
     // Synchronize Lenis scroll with GSAP ScrollTrigger

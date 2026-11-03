@@ -363,7 +363,7 @@ export function SkillsSection() {
 
               {/* ORBIT 1: Inner Orbit (Core Frontend) - Diameter: 230px (mobile) / 290px (desktop) */}
               <div
-                className={`absolute rounded-full border border-orange-500/20 shadow-inner pointer-events-none w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[310px] lg:h-[310px] ${
+                className={`absolute rounded-full border border-orange-500/20 shadow-inner pointer-events-none transform-gpu will-change-transform w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] lg:w-[310px] lg:h-[310px] ${
                   isOrbitPaused ? "" : "animate-orbit-clockwise"
                 }`}
                 style={{ animationDuration: "36s" }}
@@ -382,7 +382,7 @@ export function SkillsSection() {
                       }}
                       onMouseLeave={() => setHoveredSkill(null)}
                     >
-                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a]/95 px-2.5 py-1 text-[10px] sm:text-[11px] font-mono font-semibold text-white shadow-lg shadow-black/80 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:border-orange-400 hover:bg-orange-500/20 cursor-pointer">
+                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a] sm:backdrop-blur-md px-2.5 py-1 text-[10px] sm:text-[11px] font-mono font-semibold text-white shadow-lg shadow-black/80 transition-all duration-300 hover:scale-125 hover:border-orange-400 hover:bg-orange-500/20 cursor-pointer">
                         <span
                           className="size-1.5 sm:size-2 rounded-full"
                           style={{ backgroundColor: skill.color }}
@@ -396,7 +396,7 @@ export function SkillsSection() {
 
               {/* ORBIT 2: Middle Orbit (Backend & Databases) - Diameter: 320px (mobile) / 450px (desktop) */}
               <div
-                className={`absolute rounded-full border border-emerald-500/20 border-dashed pointer-events-none w-[270px] h-[270px] sm:w-[420px] sm:h-[420px] lg:w-[470px] lg:h-[470px] ${
+                className={`absolute rounded-full border border-emerald-500/20 border-dashed pointer-events-none transform-gpu will-change-transform w-[270px] h-[270px] sm:w-[420px] sm:h-[420px] lg:w-[470px] lg:h-[470px] ${
                   isOrbitPaused ? "" : "animate-orbit-counter"
                 }`}
                 style={{ animationDuration: "50s" }}
@@ -415,7 +415,7 @@ export function SkillsSection() {
                       }}
                       onMouseLeave={() => setHoveredSkill(null)}
                     >
-                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a]/95 px-2.5 py-1 text-[9.5px] sm:text-[11px] font-mono font-semibold text-white shadow-lg shadow-black/80 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:border-emerald-400 hover:bg-emerald-500/20 cursor-pointer">
+                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a] sm:backdrop-blur-md px-2.5 py-1 text-[9.5px] sm:text-[11px] font-mono font-semibold text-white shadow-lg shadow-black/80 transition-all duration-300 hover:scale-125 hover:border-emerald-400 hover:bg-emerald-500/20 cursor-pointer">
                         <span
                           className="size-1.5 sm:size-2 rounded-full"
                           style={{ backgroundColor: skill.color }}
@@ -429,7 +429,7 @@ export function SkillsSection() {
 
               {/* ORBIT 3: Outer Orbit (Cross-Platform Mobile, Systems & Cloud) - Diameter: 350px (mobile) / 600px (desktop) */}
               <div
-                className={`absolute rounded-full border border-sky-500/20 pointer-events-none w-[340px] h-[340px] sm:w-[560px] sm:h-[560px] lg:w-[630px] lg:h-[630px] ${
+                className={`absolute rounded-full border border-sky-500/20 pointer-events-none transform-gpu will-change-transform w-[340px] h-[340px] sm:w-[560px] sm:h-[560px] lg:w-[630px] lg:h-[630px] ${
                   isOrbitPaused ? "" : "animate-orbit-clockwise"
                 }`}
                 style={{ animationDuration: "64s" }}
@@ -448,7 +448,7 @@ export function SkillsSection() {
                       }}
                       onMouseLeave={() => setHoveredSkill(null)}
                     >
-                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a]/95 px-2.5 py-1 text-[9px] sm:text-[10.5px] font-mono font-semibold text-white shadow-lg shadow-black/80 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:border-sky-400 hover:bg-sky-500/20 cursor-pointer">
+                      <div className="flex items-center gap-1.5 rounded-full border border-white/15 bg-[#0e111a] sm:backdrop-blur-md px-2.5 py-1 text-[9px] sm:text-[10.5px] font-mono font-semibold text-white shadow-lg shadow-black/80 transition-all duration-300 hover:scale-125 hover:border-sky-400 hover:bg-sky-500/20 cursor-pointer">
                         <span
                           className="size-1.5 sm:size-2 rounded-full"
                           style={{ backgroundColor: skill.color }}

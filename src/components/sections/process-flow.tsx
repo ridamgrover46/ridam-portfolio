@@ -39,13 +39,14 @@ export function ProcessFlow() {
     }
 
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 768;
       // Scrubbed Timeline: directly tied to scroll position (fast, snappy, responsive)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 78%",
-          end: "center 52%",
-          scrub: 0.35, // Snappy low-latency bidirectional scroll scrub
+          start: isMobile ? "top 85%" : "top 78%",
+          end: isMobile ? "center 65%" : "center 52%",
+          scrub: isMobile ? 0.1 : 0.35, // Instant 0-lag scrub on mobile
         },
       });
 
@@ -141,12 +142,6 @@ export function ProcessFlow() {
                 <stop offset="80%" stopColor="#10b981" />
                 <stop offset="100%" stopColor="#059669" stopOpacity="0.2" />
               </linearGradient>
-
-              {/* Ambient Glow Filter */}
-              <filter id="curve-glow" x="-20%" y="-40%" width="140%" height="180%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
             </defs>
 
             {/* Faint Background Guide Path */}
@@ -158,7 +153,7 @@ export function ProcessFlow() {
               fill="none"
             />
 
-            {/* Animated GSAP Undulating Path */}
+            {/* Animated GSAP Undulating Path (Hardware Accelerated Drop Shadow) */}
             <path
               ref={pathRef}
               d="M 40,75 C 90,75 130,50 167,50 C 210,50 260,75 330,80 C 400,85 460,50 500,50 C 540,50 620,25 680,25 C 750,25 790,50 833,50 C 870,50 910,75 960,75"
@@ -166,44 +161,41 @@ export function ProcessFlow() {
               strokeWidth="2.5"
               strokeLinecap="round"
               fill="none"
-              filter="url(#curve-glow)"
+              className="drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]"
             />
 
             {/* Waypoint Node 1: Above Design (x: 167, y: 50) */}
-            <g transform="translate(167, 50)">
+            <g transform="translate(167, 50)" className="drop-shadow-[0_0_8px_rgba(45,212,191,0.6)]">
               <circle
                 ref={node1Ref}
                 r="9"
                 fill="#060709"
                 stroke="#2dd4bf"
                 strokeWidth="2.5"
-                filter="url(#curve-glow)"
               />
               <circle r="4" fill="#2dd4bf" />
             </g>
 
             {/* Waypoint Node 2: Above Develop (x: 500, y: 50) */}
-            <g transform="translate(500, 50)">
+            <g transform="translate(500, 50)" className="drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]">
               <circle
                 ref={node2Ref}
                 r="9"
                 fill="#060709"
                 stroke="#34d399"
                 strokeWidth="2.5"
-                filter="url(#curve-glow)"
               />
               <circle r="4" fill="#34d399" />
             </g>
 
             {/* Waypoint Node 3: Above Deliver (x: 833, y: 50) */}
-            <g transform="translate(833, 50)">
+            <g transform="translate(833, 50)" className="drop-shadow-[0_0_8px_rgba(16,185,129,0.6)]">
               <circle
                 ref={node3Ref}
                 r="9"
                 fill="#060709"
                 stroke="#10b981"
                 strokeWidth="2.5"
-                filter="url(#curve-glow)"
               />
               <circle r="4" fill="#10b981" />
             </g>

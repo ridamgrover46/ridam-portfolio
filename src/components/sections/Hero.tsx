@@ -83,22 +83,25 @@ export function Hero() {
       });
     }
 
-    // Scroll parallax
+    // Scroll parallax (desktop only to keep 120 FPS native scroll on mobile)
     let ctx: gsap.Context | null = null;
     if (!prefersReduced && heroRef.current && contentRef.current) {
-      ctx = gsap.context(() => {
-        gsap.to(contentRef.current, {
-          yPercent: -12,
-          opacity: 0.35,
-          ease: "none",
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.2,
-          },
-        });
-      }, heroRef);
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile) {
+        ctx = gsap.context(() => {
+          gsap.to(contentRef.current, {
+            yPercent: -12,
+            opacity: 0.35,
+            ease: "none",
+            scrollTrigger: {
+              trigger: heroRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: 1.2,
+            },
+          });
+        }, heroRef);
+      }
     }
 
     return () => {
@@ -139,7 +142,7 @@ export function Hero() {
 
       {/* Subtle Ambient Radial Lighting Core */}
       <div
-        className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] max-w-[90vw] h-[420px] bg-emerald-500/[0.045] rounded-full blur-[130px] pointer-events-none z-0"
+        className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] max-w-[90vw] h-[380px] bg-emerald-500/[0.04] rounded-full blur-[60px] sm:blur-[120px] pointer-events-none z-0"
         aria-hidden="true"
       />
 
