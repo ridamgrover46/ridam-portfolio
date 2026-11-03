@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { personalData } from "@/data/personal";
 import { Reveal } from "@/components/animations/reveal";
 import { soundManager } from "@/lib/sound";
+import { ThankYouModal } from "@/components/sections/thank-you-modal";
 import {
   Copy,
   Check,
@@ -35,6 +36,12 @@ export function ContactSection({
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState(false);
   const [mailtoFallback, setMailtoFallback] = useState<string | null>(null);
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
+  const [submittedInfo, setSubmittedInfo] = useState({
+    name: "",
+    email: "",
+    projectType: "",
+  });
 
   const handleCopyEmail = async () => {
     soundManager.playClick();
@@ -82,6 +89,15 @@ export function ContactSection({
         if (data.mailtoUrl) {
           setMailtoFallback(data.mailtoUrl);
         }
+        // Save submitted info for the Thank You modal
+        setSubmittedInfo({
+          name: formData.name,
+          email: formData.email,
+          projectType: formData.projectType,
+        });
+        // Open Thank You popup
+        setIsThankYouOpen(true);
+
         // Reset form
         setFormData({
           name: "",
@@ -465,6 +481,15 @@ export function ContactSection({
           </div>
         </div>
       </div>
+
+      {/* Luxury Client Thank You Popup Modal */}
+      <ThankYouModal
+        isOpen={isThankYouOpen}
+        onClose={() => setIsThankYouOpen(false)}
+        senderName={submittedInfo.name}
+        senderEmail={submittedInfo.email}
+        projectScope={submittedInfo.projectType}
+      />
     </section>
   );
 }
